@@ -1,0 +1,22 @@
+h1{
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    font-family: 'Allura';
+    text-align:center;
+    font-size: 75px;
+    background-color: #ECFDFF;
+    margin: 20px;
+    margin-left:450px;
+    margin-right: 450px;
+
+}
+p{
+color: black;
+font-family: 'Red Rose';
+text-align:center,justify;
+font-size:25px;
+font-style: normal;
+}
+.content{
+    border: 100px;
+}

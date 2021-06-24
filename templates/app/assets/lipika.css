@@ -1,0 +1,25 @@
+.logo {
+    padding-top: 50px;
+    color: white;
+    font-style: normal;
+    font-family: 'Allura';
+    text-align:center;
+}
+.nats{
+font-size: 60px;;
+}
+.bg{
+    background-image: url("https://cocybear.com/wp-content/uploads/2021/05/bg-8-2048x1005-1.jpg") ;
+    min-height:100vh;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+ /* {
+    padding-top: 50px;
+    color: white;
+    font-style: normal;
+    font-family: 'Allura';
+    text-align:center;
+} */
