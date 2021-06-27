@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/assets/sailesh.css'%}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"rel="stylesheet"/>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css'%}">
+    <title>carousel</title>
+</head>
+<body>
+    <section class="container-fluid">
+        <div class="heading">
+            <span>Our Products</span>
+        </div>
+            <div class="carousel-section">
+                <div class="owl-carousel slider_div">
+                    <div class="item img-align"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item img-align"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>  <!---epo vanthalum enaku report panu-->
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                    <div class="item"><img src="{%static 'app/assets/img/LW_-_OIL_PAINTING.jpg' %}" alt="img-1"></div>
+                </div>
+                     
+            </div>
+    </section>
+
+
+    
+
+
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'OwlCarousel2-2.3.4/dist/owl.carousel.min.js'%}"></script>
+
+    <script>
+    $(document).ready(function(){
+       
+        $('.slider_div').owlCarousel({
+            loop:true,
+            responsiveClass : true,
+            margin:10,
+            nav:false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout:3000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+      });</script>
+</body>
+</html>
