@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%load static%}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAKSHATHRA PHOTOGRAPHY</title>
+    
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" />
+  <link rel="stylesheet" href="{% static 'app/assets/index.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'slick-1.8.1/slick/slick.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'slick-1.8.1/slick/slick-theme.css'%}" />
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+    <header></hea
+der>
+{%block content%}
+{% endblock %}
+
+<footer></footer>
+
+<script type="text/javascript" src="{% static 'slick-1.8.1/slick/slick.min.js'%}"></script>
+<script type="text/javascript">
+  $('.carousel-section').slick({
+    centerMode: true,
+    centerPadding: '100px',
+    slidesToShow: 2,
+
+  });
+</script>
+
+
+</body>
+
+</html>
