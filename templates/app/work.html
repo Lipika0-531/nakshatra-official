@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'app/assets/work.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
+
+
+    
+    
+    <title>Product Page</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="head">
+            <div class=" d-flex justify-content-start search-box mt-5">
+                <input class="form-control mx-2 border-r" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-info border-r "><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+                
+                <div class="filter-icon">
+                    <a href="#"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                    
+                </div> 
+            </div>
+                     
+        </div>
+        <div class="work-title">
+            <h1>OIL&nbsp;&nbsp;PAINTING</h1>
+        </div>
+        <div class="row">
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="mt-5 row mb-5">
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md-4">
+                <div class="px-0 photo-col">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Details</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{% static 'app/assets/img/unsplash-1.jpg'%}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'app/assets/img/unsplash-1.jpg'%}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'app/assets/img/unsplash-1.jpg'%}" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="off-title my-3">
+                    <h4>ABOUT THIS PRODUCT</h4>
+                </div>
+                <div class="off-category">
+                    <h6>OIL PAINTING</h6>
+                </div>
+                <div class="off-product-name my-3">
+                    <h5>WOODPECKER PAINTING</h5>
+                </div>
+                <div class="off-price">
+                    <h2>₹ 10,900</h2>
+                </div>
+                <div class="off-art-details">
+                    <p>Art Work by : lorem</p>
+                    <p>Published on : dd/mm/yyyy</p>
+                </div>
+                <div class = "off-social-icons">
+                    <span id='heart'><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></span>
+                    <span id="share"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span>
+                    <span id="buy-now"><button type="button" class="btn btn-primary">Buy Now</button></span>
+                </div>
+                <div class="star-ratings">
+                    <span class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </span>
+                    <span class="avg-ratings">
+                        <h6>0 Ratings</h6>
+                    </span>
+                </div>  
+                <div class="comments-section">
+                    <div class="form-row align-items-center">
+                        <div class="form-floating mb-3">
+                            <textarea class="bor form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Comments</label>
+                        </div>
+                        <div class="off-act-buttons">
+                            <span class="col-auto my-1">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Cancel</button>
+                            </span>
+                            <span class="col-auto my-1">
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row prev-comments mt-4">
+                    <div class="col-md-2 user-profile"></div>
+                    <div class="name-content col-md-10">
+                        <div class="user-name">
+                            <h6>Nagalakshmi</h6>
+                        </div>
+                        <div class="review-content">
+                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row prev-comments mt-4">
+                    <div class="col-md-2 user-profile"></div>
+                    <div class="name-content col-md-10">
+                        <div class="user-name">
+                            <h6>Elii</h6>
+                        </div>
+                        <div class="review-content">
+                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row prev-comments mt-4">
+                    <div class="col-md-2 user-profile"></div>
+                    <div class="name-content col-md-10">
+                        <div class="user-name">
+                            <h6>peruchali</h6>
+                        </div>
+                        <div class="review-content">
+                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row prev-comments mt-4">
+                    <div class="col-md-2 user-profile"></div>
+                    <div class="name-content col-md-10">
+                        <div class="user-name">
+                            <h6>sundeli</h6>
+                        </div>
+                        <div class="review-content">
+                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            
+        
+
+    </section>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    
+</body>
+
+</html>
