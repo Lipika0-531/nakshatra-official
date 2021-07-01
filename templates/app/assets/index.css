@@ -296,15 +296,15 @@ font-style: normal;
     height:100%;
     object-fit: cover;
 }
-.container-2 .box.e{
+.container-2 .box:nth-child(5){
 
     grid-column: span 2;
     grid-row:span 2;
 }
-.container-2 .box.a,
-.container-2 .box.g,
-.container-2 .box.f,
-.container-2 .box.d{
+.container-2 .box:nth-child(1),
+.container-2 .box:nth-child(7),
+.container-2 .box:nth-child(6),
+.container-2 .box:nth-child(4){
     grid-row:span 2;
 
 }
@@ -340,93 +340,3 @@ font-style: normal;
     transform: scale(0.9,0.95);
 }
 
-@media (max-width:1028px){
-    .container .content h1{
-        font-size:60px;
-        text-align:center;
-    }.container .content p{
-        font-size: 25px;
-    }
-    .container-2 .content{
-        grid-template: "1fr 1fr 1fr "350px
-                       "1fr 1fr 1fr "350px
-                       "1fr 1fr 1fr "350px
-                       "1fr 1fr 1fr "350px
-                       "1fr 1fr 1fr "350px
-                       "1fr 1fr 1fr "350px;
-        grid-gap: 4px;
-    }
-
-}
-@media (max-width:991px){
-    .container .content h1{
-        font-size:60px;
-        text-align:center;
-    }.container .content p{
-        font-size: 25px;
-    }
-    .container-2 .content{
-        grid-template: "1fr 1fr 1fr "300px
-                       "1fr 1fr 1fr "300px
-                       "1fr 1fr 1fr "300px
-                       "1fr 1fr 1fr "300px
-                       "1fr 1fr 1fr "300px
-                       "1fr 1fr 1fr "300px;
-        grid-gap: 4px;
-    }
-    .container-2 .box.e{
-
-        grid-column: span 1;
-        grid-row:span 1;
-    }
-    .container-2 .box.a{
-        grid-row:span 1;
-    }
-    .container-2 .img{
-        transform: scale(0.9);
-    }
-
-}
-
-@media (max-width:768px){
-    .container .content h1{
-        font-size:40px;
-        text-align:center;
-    }.container .content p{
-        font-size: 15px;
-    }
-    .container-2 .content{
-        grid-template: "1fr 1fr "250px
-                       "1fr 1fr "250px
-                       "1fr 1fr "250px
-                       "1fr 1fr "250px
-                       "1fr 1fr "250px
-                       "1fr 1fr "250px;
-        grid-gap: 3px;
-    }
-   
-}
-@media (max-width:450px){
-    .container-2-ap .content-ap{
-        grid-template: "1fr 1fr "150px
-                       "1fr 1fr "150px
-                       "1fr 1fr "150px
-                       "1fr 1fr "150px
-                       "1fr 1fr "150px
-                       "1fr 1fr "150px;
-        grid-gap: 3px;
-    }
-   
-}
-@media (max-width:370px){
-    .container-2-ap .content-ap{
-        grid-template: "1fr 1fr "100px
-                       "1fr 1fr "100px
-                       "1fr 1fr "100px
-                       "1fr 1fr "100px
-                       "1fr 1fr "100px
-                       "1fr 1fr "100px;
-        grid-gap: 3px;
-    }
-   
-}
