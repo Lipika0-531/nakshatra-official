@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{%load static%}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
+  <title>Natshathra</title>
+  <link rel="stylesheet" href="{% static 'app/assets/contact.css'%}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <section class="hide">
+    <div class=bg-top>
+      <img src='https://cdn.discordapp.com/attachments/830741919121408021/859859850916528168/dell.jpg'>
+    </div>
+    <div class=bg-middle>
+      <div class="one">
+        <h3><i class="fas fa-phone-alt"></i> <br> <br> 9697629844</h3>
+      </div>
+      <div class="one">
+        <h3><i class="fas en fa-envelope"></i><br> <br> infotique@gmail.com</h3>
+      </div>
+      <div class="one">
+        <h3><i class="fas en fa-map-marker-alt"></i><br> <br> infotique, dubai street,<br> coimbatore dubai</h3>
+      </div>
+    </div>
+  </section>
+  <form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="first name" class="form-label"></label>
+            <input type="text" class="form-control" id="first nam" placeholder="First Name *" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="last name" class="form-label"></label>
+            <input type="text" class="form-control" id="last name" placeholder="Last Name *" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="email" class="form-control" id="exampleInputEmail" placeholder="E-Mail *" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="phone number" class="form-label"></label>
+            <input type="phonenumber" class="form-control" id="phone number" placeholder="Phone Number *" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="work" class="form-label"></label>
+            <input type="text" class="form-control" id="work" placeholder="Work(Optional)">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="company" class="form-label"></label>
+            <input type="text" class="form-control" id="company" placeholder="Company(Opational)">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label"></label>
+          <textarea class="form-control" id="message" rows="3" placeholder="Message *" required></textarea>
+        </div>
+      </div>
+      <div class="d-grid gap-2 col-3 mx-auto">
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
