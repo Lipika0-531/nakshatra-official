@@ -126,7 +126,7 @@
       <div class="content">
         {% for product in products%}
           <div class="box">
-            <img src="{%static 'app/assets/img/annie-spratt-wEzkqwmyz1I-unsplash.jpg'%}" alt="" />
+            <img src="{{product.image_URl }}" alt="" />
             <div class="middle middle-2">
               <div class="text">{{product.title}}</div>
             </div>
