@@ -7,7 +7,7 @@ urlpatterns=[
     path("product/new/", apiViews.new, name="newProduct"),
     path("products/<int:id>", apiViews.show, name="showProduct"),
     path("products/edit/<int:id>/", apiViews.edit, name="editProduct"),
-    path("api/product/<int:id>", apiViews.productDetails, name="productDetails"),
+    path("api/product/<int:id>", apiViews.productsApi.as_view(), name="productDetails"),
 ]
 
 urlpatterns += [

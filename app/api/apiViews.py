@@ -1,7 +1,13 @@
 from django.http.response import JsonResponse
+from rest_framework.response import Response
+from rest_framework.serializers import Serializer
 from . import apiForms
 from .. import models
 from django.shortcuts import redirect, render
+from . import serializers
+from rest_framework import viewsets
+from rest_framework.views import APIView
+
 def new(request):
     if request.method=='POST':
         form = apiForms.NewProductForm(request.POST, request.FILES)
@@ -21,11 +27,11 @@ def show(request):
 
 
 
-def productDetails(request, id):
-    products = models.Products.objects.filter(id=id)
-    
-    response ={
-            "status": "Success",
-            "detail":"hello"
-        }
-    return JsonResponse(products)
+
+class productsApi(APIView):
+
+    def get(self, request, id, format=None):
+        response = models.Products.objects.filter(id=id)
+        serializer = serializers.ProductsSerializer(response, many=True)
+        return Response(serializer.data)
+
