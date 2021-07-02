@@ -11,3 +11,9 @@ def index(request):
     context={'categories': categories, 'products':products}
     return render(request, "app/index.html", context)
 
+def hello():
+    print()
+def contact(request):
+    return render(request, "app/contact.html")
+def work(request):
+    return render(request, "app/work.html")

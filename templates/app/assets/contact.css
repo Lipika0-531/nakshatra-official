@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+  }
+  .hide{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .one h3{
+    font-size: 1.5rem;
+  }
+  .fas{
+    padding-left: 50px;
+  }
+  .en{
+    padding-left: 80px;
+  }
+  .bg-top img {
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+  }
+  .bg-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-image: url("svg/triangle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    margin-top: -4px;
+  }
+  
+  @media (max-width: 1200px) {
+    .bg-middle {
+      height: 250px;
+    }
+  }
+  @media (max-width: 768px) {
+    .bg-middle {
+      height: 200px;
+    }
+  }
+  

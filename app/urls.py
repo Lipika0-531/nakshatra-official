@@ -9,6 +9,9 @@ urlpatterns=[
     path("products/<int:id>", apiViews.show, name="showProduct"),
     path("products/edit/<int:id>/", apiViews.edit, name="editProduct"),
 ]
+
 urlpatterns += [
     path("index", views.index),
+    path("contact",views.contact),
+    path("work",views.work)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
