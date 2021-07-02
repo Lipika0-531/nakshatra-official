@@ -36,70 +36,34 @@
                      
         </div>
         <div class="work-title">
-            <h1>OIL&nbsp;&nbsp;PAINTING</h1>
+            <h1>{{ products.0.category}}</h1>
         </div>
-        <div class="row">
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+
+
+
+        {% load custom_tags %}
+        {% for product in products %}
+            {% if forloop.counter|isRowStart == 0 %}
+                <div class="row mb-5">
+            {% endif %}
+                    <div class= "col-md-4">
+                        <div class="px-0 photo-col">
+                            <img class="img-fluid" src="{{product.image_URl.url}}" alt="img-1" >  
+                            <div class="overlay"></div>
+                            <div class="button-img">
+                                <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
+                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" 
+                                 aria-controls="offcanvasRight">View Details</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
-        <div class="mt-5 row mb-5">
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
-                    </div>
-                </div>
-            </div>
-            <div class= "col-md-4">
-                <div class="px-0 photo-col">
-                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" >  
-                    <div class="overlay"></div>
-                    <div class="button-img">
-                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
+            {% if forloop.counter|isRowStart == 2 or forloop.last %}
+                </div> 
+            {% endif %}
+        {% endfor %}
+
+
+
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 id="offcanvasRightLabel">Details</h5>
@@ -240,9 +204,11 @@
 
 
     <!-- JavaScript Bundle with Popper -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="{% static 'app/assets/index.js' %}"></script>
 
     
 </body>

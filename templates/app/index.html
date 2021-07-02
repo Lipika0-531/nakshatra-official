@@ -53,11 +53,12 @@
   </main>
   <!-- sailesh page -->
 
-  <section>
+  <section >
       <div class="container">
           {% for category in categories %}
+          <a href="/app/work/{{category.category.id}}">link</a>
             <div>{{category.category.title}}</div>
-           <img src={{category.image_URl}}>
+           <img src={{category.image_URl.url}}>
           {% endfor %}
 
 
@@ -106,7 +107,7 @@
     </section>
   <!-- ap page -->
 
-  <section class="container">
+  <section class="container mb-5">
     <div class="content">
       <h1>Latest works</h1>
       <p>
@@ -126,7 +127,7 @@
       <div class="content">
         {% for product in products%}
           <div class="box">
-            <img src="{{product.image_URl }}" alt="" />
+            <img src="{{product.image_URl.url }}" alt="" />
             <div class="middle middle-2">
               <div class="text">{{product.title}}</div>
             </div>

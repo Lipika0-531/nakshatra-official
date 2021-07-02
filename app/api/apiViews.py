@@ -1,4 +1,6 @@
+from django.http.response import JsonResponse
 from . import apiForms
+from .. import models
 from django.shortcuts import redirect, render
 def new(request):
     if request.method=='POST':
@@ -16,3 +18,14 @@ def edit(request):
 
 def show(request):
     pass
+
+
+
+def productDetails(request, id):
+    products = models.Products.objects.filter(id=id)
+    
+    response ={
+            "status": "Success",
+            "detail":"hello"
+        }
+    return JsonResponse(products)
