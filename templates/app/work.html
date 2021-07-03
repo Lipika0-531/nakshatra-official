@@ -39,29 +39,23 @@
             <h1>{{ products.0.category}}</h1>
         </div>
 
-
-
-        {% load custom_tags %}
-        {% for product in products %}
-            {% if forloop.counter|isRowStart == 0 %}
-                <div class="row mb-5">
-            {% endif %}
-                    <div class= "col-md-4">
-                        <div class="px-0 photo-col">
-                            <img class="img-fluid" src="{{product.image_URl.url}}" alt="img-1" >  
-                            <div class="overlay"></div>
-                            <div class="button-img">
-                                <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
-                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" 
-                                 aria-controls="offcanvasRight">View Details</button>
-                            </div>
+        <div class="row mb-5">
+            {% for products in data %}
+                <div class= "px-1 col-4 col-md-4">
+                {% for product in products %}
+                    <div class="mb-2 photo-col">
+                        <img class="img-fluid" src="{{product.image_URl.url}}" alt="{{product.title}}" >  
+                        <div class="overlay"></div>
+                        <div class="button-img">
+                            <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
+                            type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" 
+                            aria-controls="offcanvasRight">View Details</button>
                         </div>
                     </div>
-            {% if forloop.counter|isRowStart == 2 or forloop.last %}
-                </div> 
-            {% endif %}
-        {% endfor %}
-
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
 
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

@@ -1,11 +1,8 @@
-from django.http.response import JsonResponse
 from rest_framework.response import Response
-from rest_framework.serializers import Serializer
 from . import apiForms
 from .. import models
 from django.shortcuts import redirect, render
 from . import serializers
-from rest_framework import viewsets
 from rest_framework.views import APIView
 
 def new(request):
