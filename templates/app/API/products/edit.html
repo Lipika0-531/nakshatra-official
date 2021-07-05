@@ -1,0 +1,11 @@
+{% extends "app/API/partials/boilerplate.html" %} {% block content %}
+<h1>
+  Edit Product
+</h1>
+<form method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button class='btn btn-info'>Submit</button>
+  </form>
+{% endblock %}
