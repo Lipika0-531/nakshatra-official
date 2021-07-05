@@ -41,26 +41,69 @@
 
 
 
-        {% load custom_tags %}
-        {% for product in products %}
-            {% if forloop.counter|isRowStart == 0 %}
-                <div class="row mb-5">
-            {% endif %}
-                    <div class= "col-md-4">
-                        <div class="px-0 photo-col">
-                            <img class="img-fluid" src="{{product.image_URl.url}}" alt="img-1" >  
-                            <div class="overlay"></div>
-                            <div class="button-img">
-                                <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
-                                 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" 
-                                 aria-controls="offcanvasRight">View Details</button>
-                            </div>
-                        </div>
+        
+        <div class="row">
+            <div class= "col-md">
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app\assets\img\LW_-_OIL_PAINTING.jpg'%}" alt="img-1" width="100%">  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
                     </div>
-            {% if forloop.counter|isRowStart == 2 or forloop.last %}
-                </div> 
-            {% endif %}
-        {% endfor %}
+                </div>
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app\assets\img\LW_-_OIL_PAINTING.jpg'%}" alt="img-1" width="100%" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md">
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" width="100%" >  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" width="100%">  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md">
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-1.jpg'%}" alt="img-1" width="100%">  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app\assets\img\LW_-_OIL_PAINTING.jpg'%}" alt="img-1" width="100%">  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class= "col-md">
+                <div class="px-0 photo-col mb-4">
+                    <img class="img-fluid" src="{% static 'app/assets/img/unsplash-2.jpg'%}" alt="img-1" width="100%">  
+                    <div class="overlay"></div>
+                    <div class="button-img">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Details</button>
+                    </div>
+                </div>
+            </div>
+                     
+            
+        </div>  
+           
 
 
 
