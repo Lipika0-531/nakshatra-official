@@ -55,11 +55,21 @@
 
   <section >
       <div class="container">
+        <div class="row">
           {% for category in categories %}
-          <a href="/app/work/{{category.category.id}}">link</a>
-            <div>{{category.category.title}}</div>
-           <img src={{category.image_URl.url}}>
+          {% if forloop.counter0|divisibleby:2 %}
+            <div class="col-md-4">
+          {% endif %}
+            <div>
+                <a  href="/app/work/{{category.category.id}}">link</a>
+                <div>{{category.category.title}}</div>
+                <img class="img-fluid" src={{category.image_URl.url}}>
+            </div>
+          {% if forloop.counter|divisibleby:2 %}
+            </div>
+          {% endif %}
           {% endfor %}
+        </div>
 
 
       </div>

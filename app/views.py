@@ -18,4 +18,11 @@ def contact(request):
     
 def work(request, id):
     products = models.Products.objects.filter(category=id)
-    return render(request, "app/work.html", {"products":products})
+    data= [[],[],[]]
+    counter = 0
+    for product in products:
+        if counter == 3:counter=0
+        data[counter].append(product)
+        counter+=1
+    context={"data":data}
+    return render(request, "app/work.html", context)
