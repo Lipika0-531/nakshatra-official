@@ -14,5 +14,6 @@ urlpatterns=[
 urlpatterns += [
     path("index", views.index),
     path("contact",views.contact),
+    path("login",views.login),
     path("work/<int:id>",views.work)
 ] 
