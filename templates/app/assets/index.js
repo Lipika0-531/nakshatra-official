@@ -4,7 +4,7 @@ console.log("hello");
 const getProduct = async (id) => {
   try {
     const response = await axios.get(
-      `http://127.0.0.1:8000/app/api/product/${id}`
+      `http://localhost:8000/app/api/product/${id}`
     );
     return response;
   } catch (error) {
