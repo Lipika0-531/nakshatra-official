@@ -79,37 +79,60 @@ font-size: 60px;;
 
 /*SAILESH CSS*/
 
-.heading {
-    font-family: 'Allura';
-    text-align:center;
-    font-size: 75px;
-    background-color: #ECFDFF;
-    margin: 25px auto;
-    height: 100px;
-    width: 50%;
-    border-radius: 14px;
+.products-section{
+    margin: auto;
+    width: 80%;
+    background-color:blue;
+    /* margin: auto; */
+}
+.slick_slider{
+    display: flex !important;
+}
+.slick_slider .items{
+    width: 350px;
+    height: 250px;
+    margin: 50px;
+    position: relative;
+}
+.slick_slider .items .slick-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 250px;
+    background-color: rgb(51, 51, 51);
+    opacity: 40%;
+}
+.slick_slider .items .slick-overlay h4{
+    opacity: 0;
+}
+.slick_slider .slick-current .slick-overlay h4{
+    opacity: 1;
+    color: white;
+    font-size: 60px;
+    font-family: 'Allura',cursive;
+    margin: 0;
+    font-weight: 100;
+}
+.slick_slider .slick-current .slick-overlay{
+    background-color: transparent;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.slick_slider .items img{
+    width: 350px;
+    height: 250px;
+    transition: all linear .5s;
+}
+.slick_slider .slick-current img{
+   transform: scale(1.2);
+}
+.slick-prev:before, .slick-next:before {
+    color: black !important ;
 }
 
-.owl-item .item {
-    width: 100%;
-    transform: translate3d(0,0,0);
-    margin: 50px 0px;
-}
-
-.slider_div .owl-item .item img {
-    width: 400px;
-    height: 300px;
-    transform: scale(.8);
-}
-
-.slider_div .owl-item.center .item img {
-    transform: scale(1.3);
-    object-fit: cover;
-}
-
-.slider_div .owl-item.active {
-    margin-left: 55px;
-}
 
 
 /*NAGU CSS*/

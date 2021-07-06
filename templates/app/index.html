@@ -53,26 +53,48 @@
   </main>
   <!-- sailesh page -->
 
-  <section >
-      <div class="container">
-        <div class="row">
-          {% for category in categories %}
-          {% if forloop.counter0|divisibleby:2 %}
-            <div class="col-md-4">
-          {% endif %}
-            <div>
-                <a  href="/app/work/{{category.category.id}}">link</a>
-                <div>{{category.category.title}}</div>
-                <img class="img-fluid" src={{category.image_URl.url}}>
-            </div>
-          {% if forloop.counter|divisibleby:2 %}
-            </div>
-          {% endif %}
-          {% endfor %}
-        </div>
-
-
+  <section>
+    <div class="products-section">
+      <div class="slick_slider multiple-items">
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">Oil Painting</h4></a>
+              </div>
+          </div>
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">Candid</h4></a>
+              </div>
+              
+          </div>
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">Portrait</h4></a>
+              </div>
+          </div>
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">Wedding</h4></a>
+              </div>
+          </div>
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">Landscape</h4></a>
+              </div>
+          </div>
+          <div class="items">
+              <img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}" alt="">
+              <div class="slick-overlay">
+                  <a href=# style="text-decoration: none;"><h4 id="slick-title">NoIdea</h4></a>
+              </div>
+          </div>
       </div>
+  </div>
   </section>
 
   <!-- <section class="container">
