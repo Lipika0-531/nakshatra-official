@@ -6,26 +6,24 @@ from django.contrib.auth import authenticate, login as auth_login
 
 def register(request):
     if request.method == "POST":
-        form = authForm.Register(request.POST)
-        if form.is_valid():
-            form.save()
+        registform = authForm.Register(request.POST, prefix="regist")  
+        if registform.is_valid():
+            registform.save()
+            return redirect("login")
     else:
-        form = authForm.Register()
-    return render(request,"app/Auth/regist.html",{"form":form})
-
-def login(request):
-    if request.method == "POST":
-        form = authForm.Login(request=request, data=request.POST)
-        print()
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
+         registform = authForm.Register(prefix="regist")
+    
+    if request.method == "POST" and not registform.is_valid():
+        loginform = authForm.Login(request=request, data=request.POST, prefix="login")
+        if loginform.is_valid():
+            username = loginform.cleaned_data["username"]
+            password = loginform.cleaned_data["password"]
             user = authenticate(username=username, password=password)
-            print(form)
             if user is not None:
-                auth_login(request,user)
+                auth_login(request, user)
                 return redirect("index")
     else:
-        form = authForm.Login()
-    return render(request,"app/Auth/regist.html",{"form":form})
+        loginform = authForm.Login(prefix="login")
+    return render(request,"app/Auth/login.html",{"registform":registform, "loginform":loginform})
+
 

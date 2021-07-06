@@ -15,17 +15,25 @@
     <div class="signs-container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form method="POST" class="sign-in-form">
             <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
+              {% csrf_token %}
+              {{loginform.error}}
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                {{ loginform.username }}
+              </div>
+
+
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              {{ loginform.password }}
             </div>
+
             <input type="submit" value="Login" class="buttons solid" />
+
+
+            <div class="forgot-pass"><a href="#">Forget password ?</a></div>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -42,24 +50,31 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+
+
+          <form method="POST" class="sign-up-form">
             <h2 class="title">Sign up</h2>
+
+            {{registform.error}}
+            {% csrf_token %}
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              {{registform.username}}
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              {{ registform.email }}
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+             {{ registform.password1 }}
             </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              {{ registform.password2 }}
+            </div>
+
+
             <input type="submit" class="buttons" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">

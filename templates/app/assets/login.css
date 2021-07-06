@@ -399,7 +399,7 @@ form.sign-in-form {
   }
 
   .signs-container:before {
-    bottom: 72%;
+    bottom: 67%;
     left: 50%;
   }
 
@@ -407,4 +407,9 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
+}
+.forgot-pass a{
+  text-decoration: none;
+  
+
 }

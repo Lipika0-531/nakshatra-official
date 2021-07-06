@@ -238,6 +238,8 @@
     color: red;
 }
 @keyframes likeAnimation {
-  0%   { transform: scale(3); }
-  100% { transform: scale(1); }
+  0%   { transform: scale(1.5);
+            opacity:.5; }
+  100% { transform: scale(1); 
+            opacity:1;}
 }

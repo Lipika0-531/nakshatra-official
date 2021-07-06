@@ -16,14 +16,13 @@ urlpatterns=[
     path("api/product/<int:id>", apiViews.productsApi.as_view(), name="productDetails"),
 
     #AUTH
-    path("registration", authViews.register),
-    path("login", authViews.login)
+    path("registration", authViews.register, name="login"),
 
 ]
 
 urlpatterns += [
     path("index", views.index, name="index"),
     path("contact",views.contact),
-    path("login",views.login),
+
     path("work/<int:id>",views.work)
 ] 
