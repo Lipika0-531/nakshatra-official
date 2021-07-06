@@ -252,6 +252,9 @@ font-size: 60px;;
 
 
 /*AP CSS */
+.upper{
+    padding-top: 40px;
+}
 .container .content h1{
     color: rgb(0, 0, 0);
     font-style: normal;
@@ -261,9 +264,6 @@ font-size: 60px;;
     background-color: #ECFDFF;
     display:inline-block;
     padding:5px 10px;
-    
-    
-
 }
 .container .content{
     text-align:center;
@@ -308,14 +308,12 @@ font-style: normal;
     grid-row:span 2;
 
 }
-
 .text {
-
     color: rgb(0, 0, 0);
     font-size: 30px;
     padding: 16px 32px;
     font-family: 'Allura';
-    text-align: center;
+    text-align: center,justify;
 }
 .middle{
     background-color: #ffffffc7;
@@ -330,13 +328,90 @@ font-style: normal;
     justify-content:center;
     transition: opacity .9s;
     transform: scale(0.9);
-
 }
 .box:hover .middle{
     opacity:1;
-
 }
 .middle-2{
     transform: scale(0.9,0.95);
+}
+@media(max-width: 996px){
+    .container .content h1{
+        font-size: 70px;
+    }
+    .container .content p{
+        font-size: 20px
+    }
+    .container-2 .content{
+        grid-template: "1fr 1fr 1fr "300px
+                       "1fr 1fr 1fr "300px
+                       "1fr 1fr 1fr "300px
+                       "1fr 1fr 1fr "300px;
+        grid-gap: 5px;
+    }
+    .container-2 .box:nth-child(1),
+    .container-2 .box:nth-child(7){
+        grid-column:span 2;
+        grid-row:span none;
+    }
+    .container-2 .box:nth-child(4){
+        grid-row:span 2;
+        grid-column: span none;
+
+    }
+    .container-2 .box:nth-child(2),
+    .container-2 .box:nth-child(6),
+    .container-2 .box:nth-child(5){
+
+        grid-column: span none;
+        grid-row:span none;
+    }
+}
+@media(max-width: 768px){
+    .container .content h1{
+        font-size:65px;
+    }
+    .container .content p{
+        font-size: 15px;
+    }
+    .container-2 .content{
+        grid-template: "1fr 1fr 1fr "250px
+                       "1fr 1fr 1fr "250px
+                       "1fr 1fr 1fr "250px
+                       "1fr 1fr 1fr "250px;
+        grid-gap: 5px;
+    }
+}
+@media(max-width: 560px){
+    .container .content h1{
+        font-size:50px;
+    }
+    .container .content p{
+        font: size 10px;
+    }
+    .container-2 .content{
+        grid-template: "1fr 1fr  "200px
+                       "1fr 1fr  "200px
+                       "1fr 1fr  "200px
+                       "1fr 1fr  "200px;
+        grid-gap: 5px;
+    }
+    .container-2 .box:nth-child(5){
+
+        grid-column: span 2;
+        grid-row:span none;
+    }
+    .container-2 .box:nth-child(4),
+    .container-2 .box:nth-child(7){
+        grid-row:span 2;
+        grid-column: span none;
+    }
+    .container-2 .box:nth-child(1),
+    .container-2 .box:nth-child(6)
+    {
+        grid-row:span none;
+        grid-column: span none;
+    
+    }
 }
 

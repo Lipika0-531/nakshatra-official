@@ -26,3 +26,6 @@ def work(request, id):
         counter+=1
     context={"data":data}
     return render(request, "app/work.html", context)
+
+def profile(request):
+    return render(request, "app/profile.html")

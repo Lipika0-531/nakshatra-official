@@ -1,0 +1,81 @@
+.myprofile{
+    font-family: 'Quicksand', sans-serif;
+    min-height:40vh;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ym9va3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60');
+}
+.profile{
+    padding-top: 70px;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    font-family: 'Allura';
+    text-align:center;
+    font-size: 3rem;
+}
+.account{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    padding-top: 15px;
+    color: rgb(255, 255, 255);
+    text-align:center;
+}
+.profile-save{
+    font-family: 'Quicksand', sans-serif;
+}
+.bg-width{
+    background-color: #ECFDFF;
+    text-align: left;
+    margin-top: 3% ;
+    margin-bottom: 3%;
+}
+#exampleFormControlInput1{
+    padding-top: 40px;
+}
+.change-password{
+    padding-top: 20px;
+}
+hr.new4 {
+    border: 1px solid black;
+}
+.profile-allign{
+    text-align: left;
+}
+.bg-width{
+    width: 900px; 
+    padding: 30px 0 30px 0;
+}
+.text-span{
+    font-size: 35px;
+    background:grey;
+    border-radius:50%;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 6px;
+}
+.round{
+    padding-left: 30px;
+    padding-bottom: 15px;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    justify-content: space-between;
+    width: 30%;
+    padding-bottom: 15px;
+}
+.bottom-erase{
+    border:none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+h2, hr,.input-user,.wrapper{
+    padding-left: 30px;
+}
+.btn{
+    width:100px;
+}

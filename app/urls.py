@@ -14,5 +14,6 @@ urlpatterns=[
 urlpatterns += [
     path("index", views.index),
     path("contact",views.contact),
-    path("work/<int:id>",views.work)
+    path("work/<int:id>",views.work),
+    path("profile",views.profile),
 ] 
