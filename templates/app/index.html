@@ -2,6 +2,7 @@
 
 {%load static%}
 {% block content %}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- lipika -->
   <main>
     <section class="container-fluid bg">
@@ -117,6 +118,7 @@
   <!-- nagu section -->
 
 
+  <!-- eli section -->
     <section id="about-section">
         <div class="container about">
             <div class="left" data-aos="fade-right">
@@ -169,4 +171,8 @@
       </div>
     </div>
   </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 {% endblock %}
