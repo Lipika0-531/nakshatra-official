@@ -129,18 +129,20 @@
                 </div>  
                 <div class="comments-section">
                     <div class="form-row align-items-center">
-                        <div class="form-floating mb-3">
-                            <textarea class="bor form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                            <label for="floatingTextarea">Comments</label>
-                        </div>
-                        <div class="off-act-buttons">
-                            <span class="col-auto my-1">
-                                <button type="submit" class="btn btn-outline-danger btn-sm">Cancel</button>
-                            </span>
-                            <span class="col-auto my-1">
-                                <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
-                            </span>
-                        </div>
+                        <form method="GET">
+                            <div class="form-floating mb-3">
+                                <textarea class="bor form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Comments</label>
+                            </div>
+                            <div class="off-act-buttons">
+                                <span class="col-auto my-1">
+                                    <button type="submit" id="cancel-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </span>
+                                <span class="col-auto my-1">
+                                    <button type="button" id="submit-btn" class="btn btn-outline-primary btn-sm">Submit</button>
+                                </span>
+                            </div>
+                        </form>
                     </div>
                 </div> 
                 <div class="row prev-comments mt-4">

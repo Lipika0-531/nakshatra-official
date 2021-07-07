@@ -14,9 +14,11 @@ urlpatterns=[
 
     #API
     path("api/product/<int:id>", apiViews.productsApi.as_view(), name="productDetails"),
+    
 
     #AUTH
     path("registration", authViews.register, name="login"),
+    path("logout", authViews.logout)
 
 ]
 

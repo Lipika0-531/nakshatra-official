@@ -27,7 +27,6 @@ form.forEach(function (btn) {
     const published = document.getElementById('product-published');
     const rating_count = document.getElementById('product-rating-count');
 
-
     title.innerText = data.title
     price.innerText = data.price
     author.innerText = data.author
@@ -37,3 +36,33 @@ form.forEach(function (btn) {
 
   });
 });
+
+
+comment = document.getElementById("floatingTextarea");
+commentSubmit = document.getElementById("submit-btn");
+
+
+
+
+
+
+commentCancel = document.getElementById("cancel-btn");
+commentSubmit.addEventListener('click', function(event){
+  console.log("hello");
+    axios({
+      method:"PUT",
+      url:"http://127.0.0.1:8000/app/api/product/1",
+      data: {
+        "rating":"4",
+        "body":"hello"
+      },
+      headers:{
+        'Content-Type': 'application/json',
+      }
+  })
+  .then(function(response){
+    console.log(response)
+  })
+
+})
+// commentSubmit =

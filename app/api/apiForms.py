@@ -59,9 +59,12 @@ class NewProductForm(forms.ModelForm):
         label_suffix=""       
     )
 
+        
+
     class Meta:
         model = models.Products
-        fields = ['title', 'author', 'description', 'category', 'image_URl', 'price']
+        exclude = ['user','likes','avg_ratings','rating_count']
+        # fields = ['title', 'author', 'description', 'category', 'image_URl', 'price']
 
     
 

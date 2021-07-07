@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpRequest
 from . import authForm
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
 
 def register(request):
@@ -27,3 +27,6 @@ def register(request):
     return render(request,"app/Auth/login.html",{"registform":registform, "loginform":loginform})
 
 
+def logout(request):
+    auth_logout(request=request)
+    return redirect("login")
