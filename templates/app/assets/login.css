@@ -375,6 +375,10 @@ form.sign-in-form {
   }
 }
 
+.forgot-pass a{
+  text-decoration: none;
+}
+
 .pad {
   margin: 15px;
 }
