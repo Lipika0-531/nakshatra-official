@@ -10,7 +10,7 @@ def new(request):
         form = apiForms.NewProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('newProduct')
+            return redirect('showAll')
     else:
         form = apiForms.NewProductForm()
     return render(request, "app/API/products/new.html",{"form":form})
@@ -34,8 +34,7 @@ def delete(request, id):
 
 def all(request):
     products = models.Products.objects.all().order_by('category')
-    data=[]
-    temp=[]
+    data=[],temp=[]
     initial_category = products[0].category
     for product in products:
         if product.category != initial_category:
@@ -43,6 +42,7 @@ def all(request):
             temp=[]
             initial_category = product.category
         temp.append(product)
+    data.append(temp)
 
     return render(request, "app/API/products/products.html",{"products":data})
 

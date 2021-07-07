@@ -1,7 +1,9 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
-from django.db.models.fields import TextField
+from django.contrib.auth.models import User
 from django.utils import timezone
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 
@@ -13,6 +15,7 @@ class Categories(models.Model):
 
 
 class Products(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     title = models.CharField(max_length=32)
     author = models.CharField(max_length=18)
@@ -35,13 +38,22 @@ class Products(models.Model):
 
 
 class Reviews(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     rating = models.IntegerField(
         validators=[MaxValueValidator(1), MaxValueValidator(5)])
-    body = TextField(max_length=4000, null=True)
+    body = models.TextField(max_length=4000, null=True)
     created_at = models.DateTimeField(editable=False)
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.created_at = timezone.now()
         return super(Reviews, self).save(*args, **kwargs)
+
+        
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    

@@ -1,5 +1,4 @@
 let form = document.querySelectorAll(".details-toggle");
-console.log("hello");
 
 const getProduct = async (id) => {
   try {

@@ -15,6 +15,9 @@ def index(request):
 def contact(request):
     return render(request, "app/contact.html")
 
+def login(request):
+    return render(request, "app/login.html")
+
     
 def work(request, id):
     products = models.Products.objects.filter(category=id)
