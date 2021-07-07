@@ -38,10 +38,10 @@
 
         <div class="row mb-5">
             {% for products in data %}
-                <div class= "px-1 col-4 col-md-4">
+                <div class= "px-1 col">
                 {% for product in products %}
                     <div class="mb-2 photo-col">
-                        <img class="img-fluid" src="{{product.image_URl.url}}" alt="{{product.title}}" >  
+                        <img class="img-fluid rounded" src="{{product.image_URl.url}}" alt="{{product.title}}" style="width: 100%;">  
                         <div class="overlay"></div>
                         <div class="button-img">
                             <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
@@ -103,6 +103,10 @@
                     <p id="product-author">Art Work by : lorem</p>
                     <p id="product-published">Published on : dd/mm/yyyy</p>
                 </div>
+                <div class="off-product-description">
+                    <h6 id="product-descrition-head">Description</h6>
+                    <p id="product-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, similique?</p>
+                </div>
                 <div class = "off-social-icons">
                     <button class="like-review like-content">
                         <i class="fa fa-heart heartclr" aria-hidden="true"></i>
@@ -147,7 +151,7 @@
                     <div class="col-md-2 user-profile"></div>
                     <div class="name-content col-md-10">
                         <div class="user-name">
-                            <h6>Nagalakshmi</h6>
+                            <h6>user1</h6>
                         </div>
                         <div class="review-content">
                             <p>This oil painting is really awesome... so fantastic.. loved it</p>
@@ -158,7 +162,7 @@
                     <div class="col-md-2 user-profile"></div>
                     <div class="name-content col-md-10">
                         <div class="user-name">
-                            <h6>Elii</h6>
+                            <h6>user2</h6>
                         </div>
                         <div class="review-content">
                             <p>This oil painting is really awesome... so fantastic.. loved it</p>
@@ -169,7 +173,7 @@
                     <div class="col-md-2 user-profile"></div>
                     <div class="name-content col-md-10">
                         <div class="user-name">
-                            <h6>peruchali</h6>
+                            <h6>user3</h6>
                         </div>
                         <div class="review-content">
                             <p>This oil painting is really awesome... so fantastic.. loved it</p>
@@ -180,7 +184,7 @@
                     <div class="col-md-2 user-profile"></div>
                     <div class="name-content col-md-10">
                         <div class="user-name">
-                            <h6>sundeli</h6>
+                            <h6>user4</h6>
                         </div>
                         <div class="review-content">
                             <p>This oil painting is really awesome... so fantastic.. loved it</p>
