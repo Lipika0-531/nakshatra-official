@@ -1,0 +1,34 @@
+.theend{
+    padding: 40px 15px;
+    background: #393939;
+    width:100%;
+    height: auto;
+    color: white;
+    font-size: 20px;
+}
+.footerlogo h5{
+    font-family: Allura;
+    font-size: 35px !important;
+    user-select: none;
+}
+.second{
+    padding: 0px 10px;
+}
+.second a{
+    color: white;
+    text-decoration: none;
+}
+.second a:hover{
+    color: rgb(255, 38, 38);
+}
+.three svg{
+    padding: 3%;
+    align-items: center;
+}
+.three svg:hover{
+    color:blue;
+}
+.theend h5{
+    color: #9B9B9B;
+    font-size: 25px;
+}
