@@ -26,4 +26,5 @@ urlpatterns += [
     path("contact",views.contact),
     path("login",views.login),
     path("work/<int:id>",views.work),
+    path("profile",views.profile),
 ] 
