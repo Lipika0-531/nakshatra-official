@@ -16,15 +16,32 @@ class CategoriesSerializer(ModelSerializer):
         model = Categories
         fields ='__all__'
 
-        
-class ProductsSerializer(ModelSerializer):
-    class Meta:
-        model = Products
-        fields = ('title', 'price', 'author', 'publised_on', 'avg_ratings', 'rating_count','category', 'user')
-
 
 
 class ReviewSerializer(ModelSerializer):
     class Meta:
         model = Reviews
         fields = ('user', 'product','rating','body')
+
+    def to_representation(self, instance):
+        response= super().to_representation(instance)
+        response['user'] =  UserSerializer(instance.user).data
+        response['product'] =ProductsSerializer(instance.product).data
+        return response
+
+
+class ProductsSerializer(ModelSerializer):
+    class Meta:
+        model = Products
+        fields = ('title', 'price', 'author', 'publised_on', 'avg_ratings', 'rating_count','category', 'user','description')
+
+
+# class ContentSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Content
+#         fields = ('title', 'body', 'topic')
+
+#     def to_representation(self, instance):
+#         response = super().to_representation(instance)
+#         response['topic'] = TopicSerializer(instance.topic).data
+#         return response
