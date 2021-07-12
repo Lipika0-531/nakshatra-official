@@ -9,8 +9,14 @@
 <link rel="stylesheet" href="{% static 'app/assets/profile.css' %}">
 
     <section class="myprofile" >
-        <h1 class="profile">My Profile</h1> 
-        <h3 class="account">MANAGE YOUR <br> ACCOUNT</h3>
+        <div class="profile-container">
+            <img class="img-fluid pro-image" src="{%static 'app\assets\img\myprofile.png'%}" alt="">
+            <div class="profile-head">
+                <h1 class="profile">My Profile</h1> 
+                <h3 class="account">MANAGE YOUR <br> ACCOUNT</h3>   
+            </div>
+        </div>
+        
     </section>
 
     <section class="user-input container bg-width">
@@ -20,23 +26,25 @@
             <span class="text-span"><b>T</b></span>
         </div>  
         <div class="mb-3 row input-user">
-            <label for="staticEmail" class="col-sm-2 col-form-label"><b>ACCOUNT</b></label>
-            <div class="col-sm-5">
-                <input type="text" readonly class="form-control-plaintext bottom-erase" id="staticEmail" value="infortique007@gmail.com">
+            <label for="staticEmail" class="col-3 col-sm-3 col-form-label"><b>ACCOUNT</b></label>
+            <div class="col-md-5 col-sm-5">
+                <input type="text" readonly class="form-control-plaintext bottom-erase" id="staticEmail" value="infotiq007@gmail.com">
             </div>
         </div>
         <div class="mb-3 row input-user">
-            <label for="inputPassword" class="col-sm-2 col-form-label  "><b>USERNAME</b></label>
-            <div class="col-sm-5">
+            <label for="inputPassword" class="col-3 col-sm-3 col-form-label  "><b>USERNAME</b></label>
+            <div class="col-md-5 col-sm-5">
                 <input type="password" class="form-control-plaintext bottom-erase" id="inputPassword" >
             </div>
         </div>
-        <div class="change-password input-user">
-            <p><b>PASSWORD</b> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="link">change password</a></p> 
+        <div class="mb-3 row change-password input-user">
+            <div class="my-pro-password col-3 col-sm-3"><b>PASSWORD</b></div>
+            <div class="col-md-5 col-sm-5"> <a href="link">change password</a></div>
+            
         </div>
-        <div class="wrapper">
-            <button type="button" class="btn btn-success rounded-pill rounded ">Save</button>
-            <button type="button" class="btn btn-outline-danger rounded-pill rounded ">Cancel</button>
+        <div class="mb-3 row wrapper">
+            <span class="col-3 col-sm-3"><button type="button" class="btn btn-success rounded-pill rounded ">Save</button></span>
+            <span class="col-md-5 col-sm-5"><button type="button" class="btn btn-outline-danger rounded-pill rounded ">Cancel</button></span>
         </div>
     </section>
     

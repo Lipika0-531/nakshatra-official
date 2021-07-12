@@ -1,3 +1,17 @@
+
+// let active;
+// active= document.querySelectorAll(".overall-review");
+// var count=[ ];
+// for(var i=0; i<=active.length; i++){
+//   active+=i[] ;
+//   count.push(active);
+// }
+
+rev_elem = document.querySelectorAll(".overall-review");
+for(let i = 0; i< 3; i++){
+  rev_elem[i].classList.add("active")
+}
+
 let form = document.querySelectorAll(".details-toggle");
 
 const getProduct = async (id) => {
