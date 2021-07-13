@@ -1,13 +1,16 @@
-.myprofile{
-    font-family: 'Quicksand', sans-serif;
-    min-height:40vh;
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ym9va3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60');
+.profile-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.profile-head{
+    position: absolute;
+}
+
 .profile{
-    padding-top: 70px;
+    /* padding-top: 70px; */
     color: rgb(255, 255, 255);
     font-style: normal;
     font-family: 'Allura';
@@ -43,7 +46,7 @@ hr.new4 {
     text-align: left;
 }
 .bg-width{
-    width: 900px; 
+    width: 100%; 
     padding: 30px 0 30px 0;
 }
 .text-span{
@@ -60,22 +63,33 @@ hr.new4 {
     padding-left: 30px;
     padding-bottom: 15px;
 }
-.wrapper{
+/* .wrapper{
     display: flex;
     flex-wrap: wrap;
     padding-top: 30px;
     justify-content: space-between;
     width: 30%;
     padding-bottom: 15px;
-}
+} */
 .bottom-erase{
     border:none;
     outline: none;
     border-bottom: 1px solid black;
+    padding: 4px;
+    max-width: 260px;
 }
 h2, hr,.input-user,.wrapper{
     padding-left: 30px;
 }
 .btn{
     width:100px;
+    margin-bottom: 5px;
+}
+
+/* media queries */
+
+@media (max-width: 630px){
+    .pro-image{
+        height: 200px;
+    }
 }
