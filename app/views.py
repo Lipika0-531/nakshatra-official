@@ -20,8 +20,6 @@ def contact(request):
     return render(request, "app/contact.html")
 
 
-
-
 def work(request, id):
     products = models.Products.objects.filter(category=id)
     data = [[], [], []]
@@ -33,6 +31,7 @@ def work(request, id):
         counter += 1
     context = {"data": data}
     return render(request, "app/work.html", context)
+
 
 def profile(request):
     return render(request, "app/profile.html")

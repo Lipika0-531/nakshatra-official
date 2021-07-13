@@ -33,7 +33,7 @@
                      
         </div>
         <div class="work-title">
-            <h1>{{ products.0.category}}</h1>
+            <h1>{{ data.0.0.category|upper}}</h1>
         </div>
 
         <div class="row mb-5">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="off-art-details">
                     <p id="product-author">Art Work by : lorem</p>
-                    <p id="product-published">Published on : dd/mm/yyyy</p>
+                    <p id="product-published-on">Published on : dd/mm/yyyy</p>
                 </div>
                 <div class="off-product-description">
                     <h6 id="product-descrition-head">Description</h6>
@@ -112,7 +112,7 @@
                         <i class="fa fa-heart heartclr" aria-hidden="true"></i>
                     </button>
                     <span id="share"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span>
-                    <span id="buy-now"><button type="button" class="btn btn-primary">Buy Now</button></span>
+                    <a href="{% url 'contact' %}" id="buy-now" class="btn btn-primary">Buy Now</a>
                 </div>
                 <div class="star-ratings">
                     <span class="rate">
@@ -141,7 +141,7 @@
                             </div>
                             <div class="off-act-buttons">
                                 <span class="col-auto my-1">
-                                    <button type="submit" id="cancel-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                    <button type="button" id="cancel-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </span>
                                 <span class="col-auto my-1">
                                     <button type="button" id="submit-btn" class="btn btn-outline-primary btn-sm">Submit</button>
@@ -152,15 +152,15 @@
                 </div> 
                 <div class="comment-section" id="comments">
                     <div class="row prev-comments mt-4">
-                        <div class="col-md-2 user-profile"></div>
-                        <div class="name-content col-md-10">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
                             <h6 id="user-name">user1</h6>
                             <p id="review-content">This oil painting is really awesome... so fantastic.. loved it</p>
                         </div>
                     </div>
                     <div class="row prev-comments mt-4">
-                        <div class="col-md-2 user-profile"></div>
-                        <div class="name-content col-md-10">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
                             <div class="user-name">
                                 <h6>user2</h6>
                             </div>
@@ -170,8 +170,8 @@
                         </div>
                     </div>
                     <div class="row prev-comments mt-4">
-                        <div class="col-md-2 user-profile"></div>
-                        <div class="name-content col-md-10">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
                             <div class="user-name">
                                 <h6>user3</h6>
                             </div>
@@ -181,8 +181,8 @@
                         </div>
                     </div>
                     <div class="row prev-comments mt-4">
-                        <div class="col-md-2 user-profile"></div>
-                        <div class="name-content col-md-10">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
                             <div class="user-name">
                                 <h6>user4</h6>
                             </div>

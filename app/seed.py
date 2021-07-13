@@ -43,15 +43,15 @@ Sauthor = [
     "Jobs",
 ]
 products = {
-    "name": lambda : names[random.randint(0, len(names)-1)],
+    "name": lambda: names[random.randint(0, len(names)-1)],
     "author": lambda: f"{random.randint(0, len(Fauthor)-1)} {random.randint(0, len(Sauthor)-1)}",
     "description": """Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
         distinctio aliquam corporis ratione consectetur quis quidem unde
         mollitia, culpa architecto eveniet voluptate deserunt saepe, atque eum
         laboriosam veritatis iure illum.""",
-    "likes":6,
-    "price":lambda: random.randint(500, 20000),
-    "avg_ratings":lambda: random.randint(1, 5),
+    "likes": 6,
+    "price": lambda: random.randint(500, 20000),
+    "avg_ratings": lambda: random.randint(1, 5),
     "rating_count": lambda: random.randint(1, 10000),
 }
 
@@ -72,8 +72,7 @@ def seeder():
                 image_URl="https://source.unsplash.com/collection/8797172",
                 price=products["price"](),
                 likes=products["price"](),
-                avg_ratings = products["avg_ratings"](),
-                rating_count = products["rating_count"]()
+                avg_ratings=products["avg_ratings"](),
+                rating_count=products["rating_count"]()
             )
             p.save()
-        

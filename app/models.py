@@ -103,7 +103,7 @@ class Products(models.Model):
     author = models.CharField(max_length=18)
     description = models.CharField(max_length=200)
     image_URl = models.ImageField(upload_to="images/")
-    publised_on = models.DateTimeField(editable=False)
+    published_on = models.DateTimeField(editable=False)
     price = models.PositiveIntegerField(default=0)
     likes = models.PositiveIntegerField(default=0, null=True)
     avg_ratings = models.IntegerField(

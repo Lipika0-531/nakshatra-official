@@ -60,12 +60,12 @@ class productsApi(APIView):
     def get(self, request, id, format=None):
         response = models.Products.objects.filter(id=id)
         serializer = serializers.ProductsSerializer(response, many=True)
-        res = models.Reviews.objects.filter(product=id) 
-        reviews = [               
-            {   'username': i.user.username,
-                'rating':i.rating,
-                'body':i.body
-            }
+        res = models.Reviews.objects.filter(product=id)
+        reviews = [
+            {'username': i.user.username,
+                'rating': i.rating,
+                'body': i.body
+             }
             for i in res
         ]
         serializer.data[0]['reviews'] = reviews
@@ -75,6 +75,12 @@ class productsApi(APIView):
         serializer = serializers.ReviewSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data)
-            return Response({'message': "success"})
+            data=serializer.data
+            response = {
+                "message":"success",
+                "username":data.get('user').get('username'),
+                "body":data.get('body'),
+                "rating":data.get('rating'),
+            }
+            return Response(response)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
