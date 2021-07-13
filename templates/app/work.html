@@ -33,7 +33,7 @@
                      
         </div>
         <div class="work-title">
-            <h1>{{ products.0.category}}</h1>
+            <h1>{{ data.0.0.category | upper}}</h1>
         </div>
 
         <div class="row mb-5">
@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 id="offcanvasRightLabel">Details</h5>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -91,13 +91,23 @@
                     <h4>ABOUT THIS PRODUCT</h4>
                 </div>
                 <div class="off-category">
-                    <h6>{{ products.0.category}}</h6>
+                    <h6>{{products.0.category}}</h6>
                 </div>
                 <div class="off-product-name my-3">
                     <h5 id="product-title">WOODPECKER PAINTING</h5>
+                    <i class="fa fa-star overall-review" aria-hidden="true"></i>
+                    <i class="fa fa-star overall-review" aria-hidden="true"></i>
+                    <i class="fa fa-star overall-review" aria-hidden="true"></i>
+                    <i class="fa fa-star overall-review" aria-hidden="true"></i>
+                    <i class="fa fa-star overall-review" aria-hidden="true"></i>
+                    <span><h6>3 ratings</h6></span>
                 </div>
                 <div class="off-price">
-                    <h2>₹<span id="product-price">10,900</span></h2>
+                    <div class="price-buy-block">
+                        <span id="buy-now"><button type="button" class="btn btn-primary">Buy Now</button></span>
+                        <h2>₹<span id="product-price">10,900</span></h2>
+
+                    </div>
                 </div>
                 <div class="off-art-details">
                     <p id="product-author">Art Work by : lorem</p>
@@ -107,13 +117,14 @@
                     <h6 id="product-descrition-head">Description</h6>
                     <p id="product-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, similique?</p>
                 </div>
-                <div class = "off-social-icons">
+                <!-- <div class = "off-social-icons">
                     <button class="like-review like-content">
                         <i class="fa fa-heart heartclr" aria-hidden="true"></i>
                     </button>
-                    <span id="share"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span>
-                    <span id="buy-now"><button type="button" class="btn btn-primary">Buy Now</button></span>
-                </div>
+                    <button class="share-button">
+                    <span id="share"><i class="fa fa-share share-icon" aria-hidden="true"></i></span>
+                    </button>
+                </div> -->
                 <div class="star-ratings">
                     <span class="rate">
                         <input type="radio" id="star5" class="star" name="rate" value="5" />
@@ -219,7 +230,7 @@
     <script>
             for(var i=1; i < 6; i++){
                 $("#star" + i).click(function (){
-                    console.log(this.value, "hi");
+                    console.log(this.value);
                 }    
                 )}
            

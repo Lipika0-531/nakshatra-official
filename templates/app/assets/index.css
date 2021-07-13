@@ -27,7 +27,7 @@ font-size: 60px;;
 .social-icon {
     margin: 20px 10px;
   }
-/* .nav-bar{
+.nav-bar{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -75,7 +75,7 @@ font-size: 60px;;
 ._nav:hover .icons{
     color:black;
     z-index:10;
-} */
+}
 
 /*SAILESH CSS*/
 
