@@ -64,40 +64,58 @@ toggleDetails.forEach(function (btn) {
     dataset = ["title","price", "author", "published_on", "rating_count", "description"];
     dataset.forEach((data) => {
       document.getElementById(`product-${data}`.replace("_", "-")).innerText =
-        (data==='published_on')?new Date(productData[data]).toDateString():productData[data];
+        (data==='published_on')?new Date(productData[data]).toDateString():
+        productData[data];
     });
-
-    productData["reviews"].forEach((review) => {
-      commentSection.appendChild(addComment(review));
-    });
+    if(productData['reviews'])
+      productData["reviews"].forEach((review) => {
+        commentSection.appendChild(addComment(review));
+      });
+    if(productData['avg_ratings']){
+      let star = document.querySelectorAll(".overall-review")
+      star.forEach( elem => elem.classList.remove('active'));
+      for(let i=0; i<productData['avg_ratings']; i++){
+          star[i].classList.add('active');
+      }
+    }
+      
   });
 });
 
 //submit comment---------------------------------------------------------------
 
 const commentSubmit = document.getElementById("submit-btn");
-
+var userRating='0';
+document.querySelectorAll('.star').forEach( 
+  star => star.addEventListener('click', function() {
+    userRating = this.value;
+  })
+);
 commentSubmit.addEventListener("click", async function (event) {
   body = $("#floatingTextarea");
-  await axios({
-    method: "POST",
-    url: `http://127.0.0.1:8000/app/api/product/${id}`,
-    data: {
-      user: 1,
-      product: id,
-      rating: 3,
-      body: body.val(),
-    },
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-  }).then(function (response) {
-    if(response.data.message === "success"){
-      let data = response.data;
-      commentSection.appendChild(addComment({username:data.username, body:data.body}));
-    }
-  });
+  try{
+    await axios({
+      method: "POST",
+      url: `http://127.0.0.1:8000/app/api/product/${id}`,
+      data: {
+        user: 1,
+        product: id,
+        rating: userRating,
+        body: body.val(),
+      },
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+    }).then(function (response) {
+      if(response.data.message === "success"){
+        let data = response.data;
+        commentSection.appendChild(addComment({username:data.username, body:data.body}));
+      }
+    });
+  }catch(error){
+    console.log(error);
+  }
 
   body.val("");
 });

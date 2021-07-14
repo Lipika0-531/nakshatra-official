@@ -106,9 +106,6 @@ class Products(models.Model):
     published_on = models.DateTimeField(editable=False)
     price = models.PositiveIntegerField(default=0)
     likes = models.PositiveIntegerField(default=0, null=True)
-    avg_ratings = models.IntegerField(
-        default=5, validators=[MinValueValidator(1), MaxValueValidator(5)], null=True)
-    rating_count = models.PositiveIntegerField(default=0, null=True)
 
     def save(self, *args, **kwargs):
         if not self.id:

@@ -32,5 +32,5 @@ class ReviewSerializer(ModelSerializer):
 class ProductsSerializer(ModelSerializer):
     class Meta:
         model = Products
-        fields = ('title', 'price', 'author', 'published_on', 'avg_ratings',
-                  'rating_count', 'category', 'user', 'description')
+        fields = ('title', 'price', 'author', 'published_on',
+                  'category', 'user', 'description')

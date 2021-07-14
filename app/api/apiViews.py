@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from . import serializers
 from rest_framework.views import APIView
 from rest_framework import status
+from django.db.models import Avg
 
 
 def new(request):
@@ -68,7 +69,10 @@ class productsApi(APIView):
              }
             for i in res
         ]
-        serializer.data[0]['reviews'] = reviews
+        if reviews:
+            serializer.data[0]['avg_ratings'] = int(res.aggregate(Avg('rating'))['rating__avg'])
+            serializer.data[0]['rating_count']=res.count()
+            serializer.data[0]['reviews'] = reviews
         return Response(serializer.data)
 
     def post(self, request, id, format=None):
