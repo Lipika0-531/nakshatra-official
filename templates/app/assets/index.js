@@ -1,83 +1,127 @@
-
-// let active;
-// active= document.querySelectorAll(".overall-review");
-// var count=[ ];
-// for(var i=0; i<=active.length; i++){
-//   active+=i[] ;
-//   count.push(active);
-// }
-
-rev_elem = document.querySelectorAll(".overall-review");
-for(let i = 0; i< 3; i++){
-  rev_elem[i].classList.add("active")
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
 }
 
-let form = document.querySelectorAll(".details-toggle");
+//------------------------------------------detail toggler--------------------------------------------------------------
 
-const getProduct = async (id) => {
+//add comment------------------------------//
+const commentSection = document.getElementById("comments");
+const toggleDetails = document.querySelectorAll(".details-toggle");
+var id;
+
+function addComment(data) {
+  var row = document.createElement("div");
+  row.classList.add("row", "prev-comments", "mt-4");
+  var profile_col = document.createElement("div");
+  profile_col.classList.add("col-2", "user-profile");
+  var review_col = document.createElement("div");
+  review_col.classList.add("name-content", "col-10");
+
+  var user_name = document.createElement("h6");
+  user_name.classList.add("user-name");
+  user_name.appendChild(document.createTextNode(data.username));
+
+  var review_content = document.createElement("p");
+  review_content.classList.add("review-content");
+  review_content.appendChild(document.createTextNode(data.body));
+
+  review_col.appendChild(user_name);
+  review_col.appendChild(review_content);
+
+  row.appendChild(profile_col);
+  row.appendChild(review_col);
+  return row;
+}
+
+const getProductDetails = async (id) => {
   try {
     const response = await axios.get(
       `http://127.0.0.1:8000/app/api/product/${id}`
     );
-    return response;
+    if (response.data) return response.data[0];
+    throw "No data";
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
-const showProduct = async (id) => {
-  const details = await getProduct(id);
 
-  if (details.data) {
-    return details.data[0];
-  }
-};
-form.forEach(function (btn) {
-  btn.addEventListener("click", async function (event) {
-    const data =  await showProduct(btn.getAttribute("data-api-value"));
-
-    const title = document.getElementById('product-title');
-    const price = document.getElementById('product-price');
-    const author = document.getElementById('product-author');
-    const published = document.getElementById('product-published');
-    const rating_count = document.getElementById('product-rating-count');
-
-    title.innerText = data.title
-    price.innerText = data.price
-    author.innerText = data.author
-    published.innerText = data.publised_on
-    rating_count.innerText = data.rating_count
-
-
+toggleDetails.forEach(function (btn) {
+  btn.addEventListener("click", async function () {
+    commentSection.innerHTML="";
+    id = btn.getAttribute("data-api-value");
+    const productData = await getProductDetails(id);
+    dataset = ["title","price", "author", "published_on", "rating_count", "description"];
+    dataset.forEach((data) => {
+      document.getElementById(`product-${data}`.replace("_", "-")).innerText =
+        (data==='published_on')?new Date(productData[data]).toDateString():
+        productData[data];
+    });
+    if(productData['reviews'])
+      productData["reviews"].forEach((review) => {
+        commentSection.appendChild(addComment(review));
+      });
+    if(productData['avg_ratings']){
+      let star = document.querySelectorAll(".overall-review")
+      star.forEach( elem => elem.classList.remove('active'));
+      for(let i=0; i<productData['avg_ratings']; i++){
+          star[i].classList.add('active');
+      }
+    }
+      
   });
 });
 
+//submit comment---------------------------------------------------------------
 
-comment = document.getElementById("floatingTextarea");
-commentSubmit = document.getElementById("submit-btn");
-
-
-
-
-
-
-commentCancel = document.getElementById("cancel-btn");
-commentSubmit.addEventListener('click', function(event){
-  console.log("hello");
-    axios({
-      method:"PUT",
-      url:"http://127.0.0.1:8000/app/api/product/1",
+const commentSubmit = document.getElementById("submit-btn");
+var userRating='0';
+document.querySelectorAll('.star').forEach( 
+  star => star.addEventListener('click', function() {
+    userRating = this.value;
+  })
+);
+commentSubmit.addEventListener("click", async function (event) {
+  body = $("#floatingTextarea");
+  try{
+    await axios({
+      method: "POST",
+      url: `http://127.0.0.1:8000/app/api/product/${id}`,
       data: {
-        "rating":"4",
-        "body":"hello"
+        user: 1,
+        product: id,
+        rating: userRating,
+        body: body.val(),
       },
-      headers:{
-        'Content-Type': 'application/json',
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+    }).then(function (response) {
+      if(response.data.message === "success"){
+        let data = response.data;
+        commentSection.appendChild(addComment({username:data.username, body:data.body}));
       }
-  })
-  .then(function(response){
-    console.log(response)
-  })
+    });
+  }catch(error){
+    console.log(error);
+  }
 
+  body.val("");
+});
+
+$('#cancel-btn').click(function(){
+  $("#floatingTextarea").val("");
 })
 //==comment display==
 

@@ -33,7 +33,7 @@
                      
         </div>
         <div class="work-title">
-            <h1>{{ data.0.0.category | upper}}</h1>
+            <h1>{{ data.0.0.category|upper}}</h1>
         </div>
 
         <div class="row mb-5">
@@ -43,6 +43,15 @@
                     <div class="mb-2 photo-col">
                         <img class="img-fluid rounded" src="{{product.image_URl.url}}" alt="{{product.title}}" style="width: 100%;">  
                         <div class="overlay"></div>
+                        <!-- <div class = "off-social-icons">
+                            <button class="like-review like-content">
+                                <i class="fa fa-heart heartclr" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <button class="share-button">
+                        <span id="share"><i class="fa fa-share share-icon" aria-hidden="true"></i></span>
+                        </button> -->
+                         <!-- </div> -->
                         <div class="button-img">
                             <button class="btn btn-light details-toggle" data-api-value = "{{ product.id }}"
                             type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" 
@@ -100,18 +109,18 @@
                     <i class="fa fa-star overall-review" aria-hidden="true"></i>
                     <i class="fa fa-star overall-review" aria-hidden="true"></i>
                     <i class="fa fa-star overall-review" aria-hidden="true"></i>
-                    <span><h6>3 ratings</h6></span>
+                    <span><h6 id="product-rating-count">3 ratings</h6></span>
                 </div>
                 <div class="off-price">
                     <div class="price-buy-block">
-                        <span id="buy-now"><button type="button" class="btn btn-primary">Buy Now</button></span>
+                        <a href="{% url 'contact' %}" id="buy-now" class="btn btn-primary">Buy Now</a>
                         <h2>₹<span id="product-price">10,900</span></h2>
 
                     </div>
                 </div>
                 <div class="off-art-details">
                     <p id="product-author">Art Work by : lorem</p>
-                    <p id="product-published">Published on : dd/mm/yyyy</p>
+                    <p id="product-published-on">Published on : dd/mm/yyyy</p>
                 </div>
                 <div class="off-product-description">
                     <h6 id="product-descrition-head">Description</h6>
@@ -121,6 +130,9 @@
                     <button class="like-review like-content">
                         <i class="fa fa-heart heartclr" aria-hidden="true"></i>
                     </button>
+                    <span id="share"><i class="fa fa-share-alt fa-2x" aria-hidden="true"></i></span>
+                    <a href="{% url 'contact' %}" id="buy-now" class="btn btn-primary">Buy Now</a>
+                </div>
                     <button class="share-button">
                     <span id="share"><i class="fa fa-share share-icon" aria-hidden="true"></i></span>
                     </button>
@@ -138,20 +150,18 @@
                         <input type="radio" id="star1" class="star" name="rate" value="1" onclick="comment_display()"/>
                         <label for="star1" title="text">1 star</label>
                     </span>
-                    <span class="avg-ratings">
-                        <h6 id="product-rating-count">0 Ratings</h6>
-                    </span>
                 </div>  
                 <div class="comments-section" id="comment">
                     <div class="form-row align-items-center">
-                        <form method="GET">
+                        <form method="POST">
+                            {% csrf_token %}
                             <div class="form-floating mb-3">
                                 <textarea class="bor form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                                 <label for="floatingTextarea">Comments</label>
                             </div>
                             <div class="off-act-buttons">
                                 <span class="col-auto my-1">
-                                    <button type="submit" id="cancel-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                    <button type="button" id="cancel-btn" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </span>
                                 <span class="col-auto my-1">
                                     <button type="button" id="submit-btn" class="btn btn-outline-primary btn-sm">Submit</button>
@@ -160,47 +170,45 @@
                         </form>
                     </div>
                 </div> 
-                <div class="row prev-comments mt-4">
-                    <div class="col-md-2 user-profile"></div>
-                    <div class="name-content col-md-10">
-                        <div class="user-name">
-                            <h6>user1</h6>
-                        </div>
-                        <div class="review-content">
-                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                <div class="comment-section" id="comments">
+                    <div class="row prev-comments mt-4">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
+                            <h6 id="user-name">user1</h6>
+                            <p id="review-content">This oil painting is really awesome... so fantastic.. loved it</p>
                         </div>
                     </div>
-                </div>
-                <div class="row prev-comments mt-4">
-                    <div class="col-md-2 user-profile"></div>
-                    <div class="name-content col-md-10">
-                        <div class="user-name">
-                            <h6>user2</h6>
-                        </div>
-                        <div class="review-content">
-                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row prev-comments mt-4">
-                    <div class="col-md-2 user-profile"></div>
-                    <div class="name-content col-md-10">
-                        <div class="user-name">
-                            <h6>user3</h6>
-                        </div>
-                        <div class="review-content">
-                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                    <div class="row prev-comments mt-4">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
+                            <div class="user-name">
+                                <h6>user2</h6>
+                            </div>
+                            <div class="review-content">
+                                <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row prev-comments mt-4">
-                    <div class="col-md-2 user-profile"></div>
-                    <div class="name-content col-md-10">
-                        <div class="user-name">
-                            <h6>user4</h6>
+                    <div class="row prev-comments mt-4">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
+                            <div class="user-name">
+                                <h6>user3</h6>
+                            </div>
+                            <div class="review-content">
+                                <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                            </div>
                         </div>
-                        <div class="review-content">
-                            <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                    </div>
+                    <div class="row prev-comments mt-4">
+                        <div class="col-2 user-profile"></div>
+                        <div class="name-content col-10">
+                            <div class="user-name">
+                                <h6>user4</h6>
+                            </div>
+                            <div class="review-content">
+                                <p>This oil painting is really awesome... so fantastic.. loved it</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -227,22 +235,7 @@
 
         })();
     </script>
-    <script>
-            for(var i=1; i < 6; i++){
-                $("#star" + i).click(function (){
-                    console.log(this.value);
-                }    
-                )}
-           
-      
-        //  {% comment %} $(".star").click(
-        //      function(){
-        //          console.log(this.value);
-        //      }
-        //  ); {% endcomment %}
-  
-    </script>
-    
+   
     <script src="{% static 'app/assets/index.js' %}"></script>
 
     

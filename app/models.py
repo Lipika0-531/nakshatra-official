@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinLengthValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User, BaseUserManager, AbstractBaseUser
 from django.utils import timezone
 
@@ -103,12 +103,9 @@ class Products(models.Model):
     author = models.CharField(max_length=18)
     description = models.CharField(max_length=200)
     image_URl = models.ImageField(upload_to="images/")
-    publised_on = models.DateTimeField(editable=False)
+    published_on = models.DateTimeField(editable=False)
     price = models.PositiveIntegerField(default=0)
     likes = models.PositiveIntegerField(default=0, null=True)
-    avg_ratings = models.IntegerField(
-        default=5, validators=[MinLengthValidator(1), MaxValueValidator(5)], null=True)
-    rating_count = models.PositiveIntegerField(default=0, null=True)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -120,10 +117,10 @@ class Products(models.Model):
 
 
 class Reviews(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name="reviews")
     rating = models.IntegerField(
-        validators=[MaxValueValidator(1), MaxValueValidator(5)])
+        validators=[MaxValueValidator(5), MinValueValidator(1)])
     body = models.TextField(max_length=4000, null=True)
     created_at = models.DateTimeField(editable=False)
 
