@@ -79,4 +79,10 @@ commentSubmit.addEventListener('click', function(event){
   })
 
 })
-// commentSubmit =
+//==comment display==
+
+let cmt_display = document.getElementsByClassName("star");
+
+function comment_display(){
+  document.getElementById("comment").style.display ="block";
+}

@@ -127,22 +127,22 @@
                 </div> -->
                 <div class="star-ratings">
                     <span class="rate">
-                        <input type="radio" id="star5" class="star" name="rate" value="5" />
+                        <input type="radio" id="star5" class="star" name="rate" value="5" onclick="comment_display()"/>
                         <label for="star5" title="text">5 stars</label>
-                        <input type="radio" id="star4" class="star" name="rate" value="4" />
+                        <input type="radio" id="star4" class="star" name="rate" value="4" onclick="comment_display()"/>
                         <label for="star4" title="text">4 stars</label>
-                        <input type="radio" id="star3"  class="star" name="rate" value="3" />
+                        <input type="radio" id="star3"  class="star" name="rate" value="3" onclick="comment_display()"/>
                         <label for="star3" title="text">3 stars</label>
-                        <input type="radio" id="star2" class="star" name="rate" value="2" />
+                        <input type="radio" id="star2" class="star" name="rate" value="2" onclick="comment_display()"/>
                         <label for="star2" title="text">2 stars</label>
-                        <input type="radio" id="star1" class="star" name="rate" value="1" />
+                        <input type="radio" id="star1" class="star" name="rate" value="1" onclick="comment_display()"/>
                         <label for="star1" title="text">1 star</label>
                     </span>
                     <span class="avg-ratings">
                         <h6 id="product-rating-count">0 Ratings</h6>
                     </span>
                 </div>  
-                <div class="comments-section">
+                <div class="comments-section" id="comment">
                     <div class="form-row align-items-center">
                         <form method="GET">
                             <div class="form-floating mb-3">

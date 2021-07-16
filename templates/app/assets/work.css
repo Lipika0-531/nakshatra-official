@@ -201,7 +201,9 @@
 ::-o-scrollbar {
     width: 0px;
 }
-
+.offcanvas-body .comments-section{
+    display: none;
+}
 .user-profile {
     height: 50px;
     width: 50px;
