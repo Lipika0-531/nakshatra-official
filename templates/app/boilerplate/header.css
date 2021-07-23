@@ -1,5 +1,9 @@
+.footer-row{
+    justify-content: space-between;
+}
+
 .theend{
-    padding: 40px 15px;
+    padding: 20px 15px;
     background: #393939;
     width:100%;
     height: auto;
@@ -19,16 +23,26 @@
     text-decoration: none;
 }
 .second a:hover{
-    color: rgb(255, 38, 38);
+    color: rgb(175, 175, 175);
 }
 .three svg{
     padding: 3%;
     align-items: center;
 }
 .three svg:hover{
-    color:blue;
+    color:rgb(81, 172, 224);
 }
-.theend h5{
-    color: #9B9B9B;
-    font-size: 25px;
+.theend h5 {
+    color: #9b9b9b;
+    font-size: 35px;
+    font-family: 'Allura';
+}
+.subscribe-area{
+    color: #9b9b9b;
+    font-size: 35px;
+    font-family: 'Allura';
+    text-transform: none;
+}
+.foo-contents{
+    font-family: 'Quicksand';
 }

@@ -130,3 +130,9 @@ let cmt_display = document.getElementsByClassName("star");
 function comment_display(){
   document.getElementById("comment").style.display ="block";
 }
+
+let heart = document.querySelector(".heart-icon");
+function heartpop(){
+  heart.classList.add("animate-like");
+}
+

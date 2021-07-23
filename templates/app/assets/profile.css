@@ -63,7 +63,7 @@ hr.new4 {
     padding-left: 30px;
     padding-bottom: 15px;
 }
-/* .wrapper{
+/* .nav-icons{
     display: flex;
     flex-wrap: wrap;
     padding-top: 30px;
@@ -78,7 +78,7 @@ hr.new4 {
     padding: 4px;
     max-width: 260px;
 }
-h2, hr,.input-user,.wrapper{
+h2, hr,.input-user,.savechanges{
     padding-left: 30px;
 }
 .btn{

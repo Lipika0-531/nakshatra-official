@@ -1,6 +1,6 @@
 
 .border-r{
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .filter-icon{
@@ -12,12 +12,37 @@
 .icon{
     color: #5f5f5f;
 }
-
-.search-box {
+.search_wrap{
+    width: 200px;
+}
+.search_wrap .search_box{
+    position: relative;
     min-width: 200px;
     max-width: 400px;
 }
+.search_wrap .search_box .search-btn{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 20%;
+    height: 100%;
+    background-color: lightblue;
+    z-index: 1;
+    border-radius: 0 5px 5px 0;
+}
+.search_wrap .search_box .search-btn:hover{
+    background-color: rgb(150, 211, 231);
+}
+.search_wrap .search_box .search-input{
+    padding-right: 50px;
+}
+.search_wrap .search_box .search-btn .searchbox-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
+}
 .work-title{
     height: 100%;
     min-width: 30%;
@@ -46,7 +71,7 @@
 .photo-col:hover .overlay {
     display: block;
     opacity: 0.7;
-    background: rgb(37, 224, 215);
+    background: rgba(53, 53, 53, 0.466);
 }
 
 .button-img {
@@ -61,10 +86,58 @@
     -moz-transition-delay: 0.3s;
 }
 
-.photo-col:hover .button-img {
+.photo-col:hover .work-hover {
     opacity: 1;
 }
+.work-hover-button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.ls-clr{
+    color: rgb(173, 173, 173);
+    font-size: 22px !important;
+    padding: 5px 5px 5px 5px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+/* .heart-icon:hover{
+    color: red;
+    background-color: transparent;
+    transition: .3s ease;
+} */
+.share-icon:hover{
+    color: rgba(0, 0, 255, 0.863);
+    background-color: transparent;
+    transition: .3s ease;
+}
+.like-review{
+    border: none;
+    /* background: rgb(255, 255, 255); */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    opacity: 0;
+    transition: opacity .35s ease;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+}
 
+.animate-like {
+	animation-name: likeAnimation;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.65s;
+    color: red;
+}
+
+@keyframes likeAnimation {
+  0%   { transform: scale(1.5);
+            opacity:.5; }
+  100% { transform: scale(1); 
+            opacity:1;}
+}
 .offcanvas-width{
     /* width: 40%; */
 }
@@ -85,24 +158,18 @@
     color: #ffc700;
 }
 
-#heart {
-    margin-right: 30px;
-}
 
 #buy-now {
-
     float: right;
 }
 
 .star-ratings{
     display:flex;
-    
 }
 
 .rate {
     float: left;
     height: 46px;
-    
 }
 
 .rate:not(:checked) > input {
@@ -229,14 +296,14 @@
     }
 }
 
-.like-content {
-    font-size: 25px;
+/* .like-content {
+    font-size: 20px;
     text-align: center;
     margin-top: -15px;
     padding: 0;
 }
 
-.like-content .like-review{
+.like-review{
     text-align: center;
     color: rgb(160, 158, 158);
     background:white;
@@ -249,43 +316,18 @@
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
     padding: 0;
+    position: absolute;
+    top: 0;
 }
 
-.share-button{
+.share-icon{
     text-decoration: none;
     border: none;
-    background:white;
-    font-size: 25px;
+    font-size: 20px;
     color: rgb(59, 59, 59);
 }
-.heartclr{
-    color: #ccc;
-}
 
-.like-content .like-review:hover {
-	  transform: translateY(-3px);
-}
 
-.like-content .like-review .fa {
-	  margin-right: 5px;
-}
 
-.like-review{
-    border: none;
-    background: none;
-}
+ */
 
-.animate-like {
-	animation-name: likeAnimation;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-duration: 0.65s;
-    color: red;
-}
-
-@keyframes likeAnimation {
-  0%   { transform: scale(1.5);
-            opacity:.5; }
-  100% { transform: scale(1); 
-            opacity:1;}
-}

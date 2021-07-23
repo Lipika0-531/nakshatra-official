@@ -358,7 +358,7 @@ legend + * {
   clear: right;
 }
 
-::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-fields-nav-icons,
 ::-webkit-datetime-edit-text,
 ::-webkit-datetime-edit-minute,
 ::-webkit-datetime-edit-hour-field,
@@ -387,7 +387,7 @@ legend + * {
   -webkit-appearance: none;
 }
 
-::-webkit-color-swatch-wrapper {
+::-webkit-color-swatch-nav-icons {
   padding: 0;
 }
 
