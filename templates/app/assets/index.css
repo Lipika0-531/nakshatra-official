@@ -1,7 +1,9 @@
 /*LIPIKA CSS */
-
+.trans{
+    background-color: transparent !important;
+}
 .logo {
-    padding-top: 50px;
+
     color: white;
     font-style: normal;
     font-family: 'Allura';
@@ -17,17 +19,17 @@ font-size: 60px;;
     background-position: center;
     background-repeat: no-repeat;
 }
-.icon{ 
+/* .icon{ 
     position: absolute;
     top: 0px;
     color: white;
     left:10px;
     right: 20px;
-}
-.social-icon {
+} */
+/* .social-icon {
     margin: 20px 10px;
-  }
-.nav-bar{
+  } */
+/* .nav-bar{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -36,8 +38,8 @@ font-size: 60px;;
     overflow-x:hidden;
     transform:translate(-100%,50%);
     padding: 10px 18px;
-}
-._nav{
+} */
+/* ._nav{
     color: white;
     margin-bottom:10px;
     border-radius: 50%;
@@ -75,64 +77,210 @@ font-size: 60px;;
 ._nav:hover .icons{
     color:black;
     z-index:10;
-}
+} */
 
-/*SAILESH CSS*/
-
-.products-section{
-    margin: auto;
-    width: 80%;
-    background-color:blue;
-    /* margin: auto; */
-}
-.slick_slider{
-    display: flex !important;
-}
-.slick_slider .items{
-    width: 350px;
-    height: 250px;
-    margin: 50px;
-    position: relative;
-}
-.slick_slider .items .slick-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 350px;
-    height: 250px;
-    background-color: rgb(51, 51, 51);
-    opacity: 40%;
-}
-.slick_slider .items .slick-overlay h4{
-    opacity: 0;
-}
-.slick_slider .slick-current .slick-overlay h4{
-    opacity: 1;
-    color: white;
-    font-size: 60px;
-    font-family: 'Allura',cursive;
-    margin: 0;
-    font-weight: 100;
-}
-.slick_slider .slick-current .slick-overlay{
-    background-color: transparent;
-    opacity: 1;
+.nav-icons{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    height: 100vh;
+    /* right: 0; */
+    right: 10px;
+    position: absolute;
+    position: fixed;
+    top: 0;
 }
-.slick_slider .items img{
-    width: 350px;
-    height: 250px;
-    transition: all linear .5s;
-}
-.slick_slider .slick-current img{
-   transform: scale(1.2);
-}
-.slick-prev:before, .slick-next:before {
-    color: black !important ;
+.button{
+    /* background-color: white; */
+    border: 2px solid white;
+    overflow: hidden;
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+    border-radius: 50px;
+    right: 0;
+    transition: all 0.3s ease-out;
+    color: white;
+    cursor: pointer;
+    
 }
 
+.nav-icons .button:hover:nth-child(1){
+    width: 100px;
+    right: 0;
+    background-color: white;
+    color: black; 
+}
+.nav-icons .button:hover:nth-child(2){
+    width: 125px;
+    right: 0;
+    background-color: #fff;
+    color: black;    
+}
+.nav-icons .button:hover:nth-child(3){
+    width: 130px;
+    right: 0;
+    background-color: #fff;
+    color: black;
+    
+}
+.nav-icons .button:hover:nth-child(4){
+    width: 165px;
+    right: 0;
+    background-color: #fff;
+    color: black;
+    
+}
+.nav-icons .button:hover:nth-child(5){
+    width: 115px;
+    right: 0;
+    background-color: #fff;
+    color: black;
+    
+}
+
+.nav-icons .button .icons{
+    display: inline-block;
+    height: 35px;
+    width: 31px;
+    text-align: center;
+    /* box-sizing: border-box; */
+    line-height: 31px;
+    
+}
+
+/* .nav-icons .button .icons .home{
+    font-size: 17px;
+    line-height: 35px;
+} */
+.nav-icons .button .icon-name{
+    font-size: 25px;
+    line-height: 35px;
+    /* margin-left: 1px; */
+    text-decoration: none;
+    color: black;
+    font-family: 'Allura';
+}
+.button .icon-name:active{
+    color: white;
+    transition: all;
+}
+
+/* js */
+.nav-icons .button.iconchange{
+    color: black;
+    border: 2px solid black;
+}
+.nav-icons .button.hovericonchange:hover:nth-child(1){
+    width: 100px;
+    right: 0;
+    background-color: black;
+    color: white; 
+}
+
+.nav-icons .button.hovericonchange:hover:nth-child(2){
+    width: 130px;
+    right: 0;
+    background-color: black;
+    color: white;     
+}
+.nav-icons .button.hovericonchange:hover:nth-child(3){
+    width: 135px;
+    right: 0;
+    background-color: black;
+    color: white; 
+    
+}
+.nav-icons .button.hovericonchange:hover:nth-child(4){
+    width: 175px;
+    right: 0;
+    background-color: black;
+    color: white; 
+    
+}
+.nav-icons .button.hovericonchange:hover:nth-child(5){
+    width: 120px;
+    right: 0;
+    background-color: black;
+    color: white; 
+    
+}
+.button .icon-name.hovernamechange{
+    color: white;
+}
+
+
+/*SAILESH CSS*/
+.product-section{
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.wrapper{
+    width: 100%;
+}
+
+.wrapper .carousel{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+.carousel .carousel-card{
+    /* background-color: red; */
+    line-height: 250px;
+    text-align: center;
+    color: white;
+    font-size: 90px;
+    margin: 20px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 40px;
+}
+.owl-dot{
+    height: 8px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid grey !important;
+    margin: 5px;
+    background-color: grey; 
+    transition: all 0.3s ease;
+}
+.owl-dot:hover,
+.owl-dot.active{
+    background-color: darkgrey !important;
+}
+
+.owl-item.active.center{
+    transition: all .5s ease;
+    transform: scale(1.2);
+
+}
+.owl-item.active.center .carousel-product-title{
+  
+    opacity: 1;
+}
+
+.carousel-product-title{
+    position: absolute;
+    opacity: 0;
+    font-family: 'Allura';
+    font-size: 40px;
+    text-decoration: none;
+    height: 0px;
+    color: white;
+}
+.carousel-product-title:hover{
+    font-size: 42px;
+    color: white !important;
+}
 
 
 /*NAGU CSS*/
