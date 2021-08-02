@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'app/assets/profile.css' %}">
 
-    <section class="myprofile" >
+    <section class="profile-section" >
         <div class="profile-container">
-            <img class="img-fluid pro-image" src="{%static 'app\assets\img\myprofile.png'%}" alt="">
+            <img class="img-fluid profile-section-bg" src="{%static 'app\assets\img\myprofile.png'%}" alt="">
             <div class="profile-head">
                 <h1 class="profile">My Profile</h1> 
                 <h3 class="account">MANAGE YOUR <br> ACCOUNT</h3>   
@@ -20,34 +20,62 @@
     </section>
 
     <section class="user-input container bg-width">
-       <h2 class="profile-allign">My Profile</h2>
-       <hr class="new4"><br>
-        <div class="round">
-            <span class="text-span"><b>T</b></span>
-        </div>  
-        <div class="mb-3 row input-user">
-            <label for="staticEmail" class="col-3 col-sm-3 col-form-label"><b>ACCOUNT</b></label>
-            <div class="col-md-5 col-sm-5">
-                <input type="text"  class="form-control-plaintext bottom-erase" id="staticEmail" placeholder="example@abc.com">
+
+        <div class="pro-left">
+            <div class="propic">
+                <img class="propichere" src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}"  alt="">
+                <input type="file" id="propicinput">
+                <label for="propicinput" id="propicupload"><i class="fa fa-camera" aria-hidden="true"></i><br>Choose Photo</label>
+            </div>
+            <div class="userdetails">
+                <div class="username">
+                    <h5 class="username-display">Minii</h5>
+                </div>
+                <div class="yourcollection flex-content">
+                    <div class="collections icon">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                    <a class="urcollectionnav profilenavs" href="#"><span class="urcollectionhead">Your collections</span></a>
+                </div>
+
+                <div class="logout flex-content">
+                    <div class="logout icon">
+                        <i class="fa fa-power-off" aria-hidden="true"></i>
+
+                    </div>
+                    <a class = "userlogout profilenavs" href="#"><span class="logoutuser">Logout</span></a>
+
+                </div>
             </div>
         </div>
-        <div class="mb-3 row input-user">
-            <label for="inputPassword" class="col-3 col-sm-3 col-form-label  "><b>USERNAME</b></label>
-            <div class="col-md-5 col-sm-5">
-                <input type="password" class="form-control-plaintext bottom-erase" id="inputPassword" >
-            </div>
-        </div>
-        <div class="mb-3 row change-password input-user">
-            <div class="my-pro-password col-3 col-sm-3"><b>PASSWORD</b></div>
-            <div class="col-md-5 col-sm-5"> <a href="link">change password</a></div>
-            
-        </div>
-        <div class="mb-3 row savechanges">
-            <span class="col-3 col-sm-3"><button type="button" class="btn btn-success rounded-pill rounded ">Save</button></span>
-            <span class="col-md-5 col-sm-5"><button type="button" class="btn btn-outline-danger rounded-pill rounded ">Cancel</button></span>
+        <div class="pro-right">
+            <h5 class="manageacnt-head">User Account</h5>
+            <form action="" class="profile-validation" novalidate>
+                <div class="usernamearea inputareas">
+                    <label for="validationCustom01" class="form-label ">First name</label>
+                    <input type="text"  class="form-control inputtextareas" id="validationCustom01" value="Minii" required disabled>
+                    <button type="button" onclick="editButton1()" class="btn btn-primary btn-sm editbutton"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <div class="invalid-feedback">
+                      Please fill out this field
+                    </div>
+
+                </div>
+                <div class="emailarea inputareas">
+                    <label for="exampleFormControlInput1" class="form-label ">Email address</label>
+                    <input type="email" class="form-control inputtextareas" id="exampleFormControlInput1" value="mini@gmail.com" required disabled>
+                    <button type="button" onclick="editButton2()" class="btn btn-primary btn-sm editbutton"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i></button>
+                    <div class="invalid-feedback">
+                        Please fill out this field with a valid e-mail id
+                    </div>
+                </div>
+                <div class="changepassword">
+                    <a href="">change password</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm ">Update</button>
+                <button type="reset" class="btn btn-primary btn-sm resetbtn">Reset</button>
+                
+            </form>
         </div>
     </section>
-    
-
 
 {% endblock %}

@@ -35,3 +35,15 @@ def work(request, id):
 
 def profile(request):
     return render(request, "app/profile.html")
+
+def like(request, id):
+    products = models.Products.objects.filter(category=id)
+    data = [[], [], []]
+    counter = 0
+    for product in products:
+        if counter == 3:
+            counter = 0
+        data[counter].append(product)
+        counter += 1
+    context = {"data": data}
+    return render(request, "app/like.html", context)

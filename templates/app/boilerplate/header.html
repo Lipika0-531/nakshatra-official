@@ -23,7 +23,6 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
     <header></header>
@@ -43,10 +42,10 @@
       <div class="second">
         <h5 class="quicker-links">Quicker Links</h5>
         <a class="quick-nav-links foo-contents" href="#home">Home</a><br>
-        <a class="quick-nav-links foo-contents" href="#about us">About Us</a><br>
-        <a class="quick-nav-links foo-contents"  foo-contentshref="#latest work">Latest Work</a><br>
-        <a class="quick-nav-links foo-contents" href="#our product">Our Products</a><br>
-        <a class="quick-nav-links foo-contents" href="#contact us">Contact Us</a>
+        <a class="quick-nav-links foo-contents" href="#about us">About&nbspUs</a><br>
+        <a class="quick-nav-links foo-contents"  foo-contentshref="#latest work">Latest&nbspWork</a><br>
+        <a class="quick-nav-links foo-contents" href="#our product">Our&nbspProducts</a><br>
+        <a class="quick-nav-links foo-contents" href="#contact us">Contact&nbspUs</a>
       </div>
     </div>
     <div class="col-md-2"><h5>Follow us</h5><br>
@@ -70,12 +69,14 @@
           <div class="col-auto">
             <label for="subscribe" class="col-form-label"></label>
           </div>
-        <div class="col-auto">
-          <input type="email" id="subscribe" class="form-control" placeholder="E-Mail">
-        </div>
-        <div class="col-auto">
-          <button type="button" class="btn btn-secondary">SUBSCRIBE</button>
-        </div>
+            <div class="col-auto">
+              <input type="email" id="subscribe" class="form-control" placeholder="E-Mail">
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-secondary">SUBSCRIBE</button>
+            </div>
+
+        
       </div>
      
     </div>
@@ -112,11 +113,14 @@
   const iconnames = document.querySelectorAll('.button .icon-name');
 
   function change(){
+    const aboutPage = document.getElementById('aboutpage');
       changable.forEach(btn => {
         if(window.scrollY > window.innerHeight / 2 + 100){
-          btn.classList.add('iconchange','hovericonchange');
+          btn.classList.add('iconchange','hovericonchange');  
+          aboutPage.setAttribute('style',"overflow-x:unset;");
         } else {
           btn.classList.remove('iconchange','hovericonchange');
+          aboutPage.setAttribute('style',"overflow-x:hidden;");
         }
       })
   }
@@ -134,6 +138,66 @@
   }
   window.addEventListener('scroll', namechange);
 
+  // ================profilepic=========================
+
+  const propic = document.querySelector('.propichere');
+  const picfile = document.querySelector('#propicinput');
+  const uploadfile = document.querySelector('#propicupload');
+
+  picfile.addEventListener('change', function() {
+    const newfile = this.files[0];
+
+    if(newfile){
+      const reader = new FileReader();
+
+      reader.addEventListener('load', function(){
+        propic.setAttribute('src',reader.result);
+      });
+      
+      reader.readAsDataURL(newfile);
+    }
+  });
+
+// ====================editbutton
+
+function editButton1(){
+  if(document.getElementById('validationCustom01').disabled == true){
+    document.getElementById('validationCustom01').disabled = false;
+  } else if(getElementById('validationCustom01').disabled == false){
+    document.getElementById('validationCustom01').disabled = true;
+  }
+}
+
+
+function editButton2(){
+  if(document.getElementById('exampleFormControlInput1').disabled == true){
+    document.getElementById('exampleFormControlInput1').disabled = false;
+  } else if(getElementById('exampleFormControlInput1').disabled == false){
+    document.getElementById('exampleFormControlInput1').disabled = true;
+  }
+}
+
+// ================================profile-validation 
+
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.profile-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
