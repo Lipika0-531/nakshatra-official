@@ -8,9 +8,10 @@
 .profile-head{
     position: absolute;
 }
-
+.profile-section-bg{
+    min-height: 200px;
+}
 .profile{
-    /* padding-top: 70px; */
     color: rgb(255, 255, 255);
     font-style: normal;
     font-family: 'Allura';
@@ -24,72 +25,163 @@
     color: rgb(255, 255, 255);
     text-align:center;
 }
-.profile-save{
-    font-family: 'Quicksand', sans-serif;
-}
+
 .bg-width{
     background-color: #ECFDFF;
     text-align: left;
     margin-top: 3% ;
     margin-bottom: 3%;
-}
-#exampleFormControlInput1{
-    padding-top: 40px;
-}
-.change-password{
-    padding-top: 20px;
-}
-hr.new4 {
-    border: 1px solid black;
-}
-.profile-allign{
-    text-align: left;
-}
-.bg-width{
-    width: 100%; 
-    padding: 30px 0 30px 0;
-}
-.text-span{
-    font-size: 35px;
-    background:grey;
-    border-radius:50%;
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-    text-align: center;
-    margin-right: 6px;
-}
-.round{
-    padding-left: 30px;
-    padding-bottom: 15px;
-}
-/* .nav-icons{
+    /* min-height: 410px; */
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    justify-content: space-between;
-    width: 30%;
-    padding-bottom: 15px;
+    padding: 0;
+}
+/* 
+.container{
+    width: 100%;
+    display: flex;
+    background-color: lightblue;
+    padding: 0;
+
 } */
-.bottom-erase{
-    border:none;
-    outline: none;
+.pro-left{
+    width: 50%;
+    background-color: #ECFDFF;
+    position: relative;
+    padding-bottom: 10px;
+}
+.propic{
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    margin-top: 20px;
+}
+.propichere{
+    height:100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+#propicupload{
+    position: absolute;
+    left: 0;
+    background-color: rgb(0,0,0,0.6);
+    color: white;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    font-size: 12px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: opacity .35s ease;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    opacity: 0;
+}
+.propic:hover #propicupload{
+    opacity: 1;
+}
+.userdetails{
+    margin-top: 135px;
+}
+.username .username-display{
+    text-align: center;
+}
+.flex-content{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: lightblue;
+    border-radius: 3px;
+    margin: 15px 30px 5px 30px;
+    text-align: center;
+}
+
+.profilenavs{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.profilenavs:hover{
+    color: black;
+    font-size: 21px;
+}
+
+.pro-right{
+    width: 50%;
+    padding-left: 15px;
+    padding: 20px;
+    background-color: white;
+
+}
+.manageacnt-head{
+    text-align: center;
+    margin: 20px;
+}
+
+.inputareas{
+    margin-bottom:20px;
+    position: relative;
+}
+
+.changepassword{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputareas .inputtextareas{
+    border: none;
+    background-color: transparent;
     border-bottom: 1px solid black;
-    padding: 4px;
-    max-width: 260px;
+    width: 70%;
+    border-radius: 0px;
 }
-h2, hr,.input-user,.savechanges{
-    padding-left: 30px;
+.editbutton{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    color: grey;
+    font-size: 20px;
+    background-color: transparent !important;
+    border: none !important;
 }
-.btn{
-    width:100px;
-    margin-bottom: 5px;
+.editbutton:hover{
+    /* background-color: rgb(60, 98, 110) !important; */
+    color: rgb(82, 82, 82);
+}
+.resetbtn{
+    margin-left: 15px;
+
 }
 
-/* media queries */
+#propicinput{
+    display: none;
+}
 
-@media (max-width: 630px){
+#propicupload{
+    text-align: center;
+}
+
+
+
+@media (max-width: 800px){
     .pro-image{
         height: 200px;
+    }
+    .bg-width{
+        flex-direction: column;
+    }
+    .pro-left{
+        width: 100%;
+    }
+    .pro-right{
+        width: 100%;
     }
 }

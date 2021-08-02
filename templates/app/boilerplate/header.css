@@ -1,7 +1,6 @@
 .footer-row{
     justify-content: space-between;
 }
-
 .theend{
     padding: 20px 15px;
     background: #393939;
@@ -29,6 +28,9 @@
     padding: 3%;
     align-items: center;
 }
+.three{
+    display: inline-block;
+}
 .three svg:hover{
     color:rgb(81, 172, 224);
 }
@@ -42,7 +44,9 @@
     font-size: 35px;
     font-family: 'Allura';
     text-transform: none;
+    line-height: normal;
 }
 .foo-contents{
     font-family: 'Quicksand';
+    font-size: 16px;
 }

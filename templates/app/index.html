@@ -5,65 +5,49 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- lipika -->
   <main>
-    <section class="container-fluid bg">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <section class="container-fluid bg" id="HOME">
+      <header class="social-icons-header mt-3">
+       <a href="#"><i class="fa fa-twitter s-icon p-2" aria-hidden="true"></i></a>
+       <a href="#"><i class="fa fa-facebook-official s-icon p-2" aria-hidden="true"></i></a>
+       <a href="#"><i class="fa fa-instagram s-icon p-2" aria-hidden="true"></i></a>
+
+      </header>
       <div class="logo">
         <h1 class="nats">Nakshatra</h1>
         <h2>Photography</h2>
       </div>
+      <a href="/app/logout">logout</a>
       
-      
-      
-      <!-- <div class="icon">
-        <i class="social-icon fab fa-instagram fa-1x"></i>
-        <i class="social-icon fab fa-twitter fa-1x"></i>     
-        <i class="social-icon fab fa-facebook-f fa-1x"></i>
-        <a href="/app/logout">logout</a>
-      </div> -->
-      
-      <div class="nav-icons">
-        <div class="button">
-            <div class="icons"><i class="fa fa-home" aria-hidden="true"></i></div>
-            <a class="icon-name" href="#HOME">Home</a>
+      <div class="nav">
+        <div class="nav-icons">
+          <div class="button">
+              <div class="icons"><i class="fa fa-home" aria-hidden="true"></i></div>
+              <a class="icon-name" href="#HOME">Home</a>
+          </div>
+          <div class="button">
+              <div class="icons"><i class="fa fa-th-large" aria-hidden="true"></i></div>
+              <a class="icon-name" href="#PRODUCT">Products</a>
+          </div>
+          <div class="button">
+              <div class="icons"><i class="fa fa-users" aria-hidden="true"></i></div>
+              <a class="icon-name" href="#ABOUT">About Us</a>
+          </div>
+          <div class="button">
+              <div class="icons"><i class="fa fa-clock" aria-hidden="true"></i></div>
+              <a class="icon-name" href="#LATEST">Latest Works</a>
+          </div>
+          <div class="button">
+              <div class="icons"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+              <a class="icon-name" href="#CONTACT">Contact</a>
+          </div>
         </div>
-        <div class="button">
-            <div class="icons"><i class="fa fa-th-large" aria-hidden="true"></i></div>
-            <a class="icon-name" href="#PRODUCT">Products</a>
-        </div>
-        <div class="button">
-            <div class="icons"><i class="fa fa-users" aria-hidden="true"></i></div>
-            <a class="icon-name" href="#ABOUT">About Us</a>
-        </div>
-        <div class="button">
-            <div class="icons"><i class="far fa-clock" style="font-size: 20px;"></i></div>
-            <a class="icon-name" href="#LATEST">Latest Works</a>
-        </div>
-        <div class="button">
-            <div class="icons"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-            <a class="icon-name" href="#CONTACT">Contact</a>
-        </div>
-      </div>
+      </nav>
    
     </section>
   </main>
   <!-- sailesh page -->
 
-  <section class="product-section">
+  <section class="product-section" id="PRODUCT">
     <div class="wrapper">
       <div class="carousel owl-carousel owl-theme">
           <div class="carousel-card card-1"><img  src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}"><a href="#" class="carousel-product-title">Oil painting</a> </div>
@@ -72,13 +56,13 @@
           <div class="carousel-card card-4"><img src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}"><a href="#" class="carousel-product-title">Oil painting</a> </div>
           <div class="carousel-card card-5"><img  src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}"><a href="#" class="carousel-product-title">Oil painting</a> </div>
       </div>
-  </div>
+    </div>
    
   </section>
 
   <!-- nagu section -->
-    <section id="about-section">
-        <div class="container about">
+    <section class="about-section" id="ABOUT">
+        <div class="container about" id="aboutpage">
             <div class="left" data-aos="fade-right">
                <img class="img-fluid image" src="{%static 'app\assets\img\vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg'%}"  alt="" srcset="">
             </div>
@@ -99,7 +83,7 @@
     </section>
   <!-- ap page -->
 
-  <section class="container mb-5 upper">
+  <section class="container mb-5 upper" id="LATEST">
     <div class="content">
       <h1>Latest works</h1>
       <p>

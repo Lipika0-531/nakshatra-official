@@ -28,4 +28,5 @@ urlpatterns += [
     path("contact", views.contact, name="contact"),
     path("work/<int:id>", views.work),
     path("profile", views.profile),
+    path("like/<int:id>",views.like),
 ]

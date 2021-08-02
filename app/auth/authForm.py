@@ -28,7 +28,8 @@ class Register(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'id': 'InputPassword',
-                   'placeholder': 'Password'})
+                   'placeholder': 'Password'}),
+        min_length=8,
     )
 
     password2 = forms.CharField(
@@ -55,5 +56,6 @@ class Login(AuthenticationForm):
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'id': 'InputPassword',
-                   'placeholder': 'Password'})
+                   'placeholder': 'Password'}),
+        min_length=8,
     )
