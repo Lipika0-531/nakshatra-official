@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {%load static%}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'app/assets/login.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" />
+  <style>
+      @media(max-width: 870px) {
+          .alignment{
+            top: 70%;
+          }
+      }
+  </style>
+  <title>Password-reset</title>
+</head>
+<body>
+  <div class="signs-container">
+    <div class="forms-container">
+      <div class="signin-signup alignment">
+        <form method="POST" class="sign-in-form need-validation" novalidate>
+          <h5 class="title">Enter your E-&nbsp;mail address</h5>
+          <div class="input-field">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <input type="email" name="login-username" id="InputEmail" placeholder="User Name" maxlength="255" required="">
+          </div>
+          <input type="submit" value="Send Link" class="buttons solid" />
+        </form>
+      </div>
+    </div>
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h2 class="no-worries" >No&nbsp;Worries</h2>
+          <h4 class="no-worries" style="margin-top: 15px;">we can retrive your <br>account within few steps</h4>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'app/assets/login.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

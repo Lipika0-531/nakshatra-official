@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {%load static%}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{% static 'app/assets/login.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" />
+  <title>new password</title>
+</head>
+<body>
+  <div class="signs-container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form method="POST" class="sign-in-form need-validation" novalidate>
+          <h3 class="title">Enter your New password</h3>
+          <div class="1 input-field">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="60" fill="lightgrey"
+              class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
+            </svg>
+            <input type="password" name="login-username" id="InputEmail" placeholder="New password" maxlength="255"
+              required="">
+          </div>
+          <div class="password-text">
+            <h5>
+              <ul style="padding-left: 10px;">
+                <li>Your password must contain atleast 8 characters</li>&nbsp<li>Your password cannot be commonly used
+                  password</li>&nbsp<li>Your password must be alphanumeric</li>&nbsp<li>Your password can't be entirely
+                  numeric</li>
+              </ul>
+            </h5>
+          </div>
+          <div class="2 input-field">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="60" fill="lightgrey"
+              class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
+            </svg>
+            <input type="password" name="login-username" id="InputEmail" placeholder="Confirm password" maxlength="255"
+              required="">
+          </div>
+          <input type="submit" value="RESET PASSWORD" class="buttons solid" />
+        </form>
+      </div>
+    </div>
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3 class="no-worries">No Worries</h3><br>
+          <h5 class="no-worries retrive">we can retrive your <br>account within few steps</h5>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'app/assets/login.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

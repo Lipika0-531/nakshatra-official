@@ -36,8 +36,8 @@ def work(request, id):
 def profile(request):
     return render(request, "app/profile.html")
 
-def like(request, id):
-    products = models.Products.objects.filter(category=id)
+def like(request):
+    products = models.Products.objects.all()
     data = [[], [], []]
     counter = 0
     for product in products:

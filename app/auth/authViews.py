@@ -30,3 +30,13 @@ def register(request):
 def logout(request):
     auth_logout(request=request)
     return redirect("login")
+
+
+def reset_1(request):
+    return render(request, 'app/Auth/reset-1.html')
+
+def reset_2(request):
+    return render(request, 'app/Auth/reset-2.html')
+
+def reset_3(request):
+    return render(request, 'app/Auth/reset-3.html')

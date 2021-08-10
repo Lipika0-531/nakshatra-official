@@ -19,8 +19,10 @@ urlpatterns = [
 
     # AUTH
     path("registration", authViews.register, name="login"),
-    path("logout", authViews.logout)
-
+    path("logout", authViews.logout),
+    path("reset-1",authViews.reset_1),
+    path("reset-2",authViews.reset_2),
+    path("reset-3",authViews.reset_3),
 ]
 
 urlpatterns += [
@@ -28,5 +30,5 @@ urlpatterns += [
     path("contact", views.contact, name="contact"),
     path("work/<int:id>", views.work),
     path("profile", views.profile),
-    path("like/<int:id>",views.like),
+    path("like",views.like),
 ]
