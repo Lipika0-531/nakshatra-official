@@ -10,14 +10,13 @@
     ></script>
     <link rel="stylesheet" href="{% static 'app/assets/login.css' %}" />
   <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" />
-
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
     <div class="signs-container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form method="POST" class="sign-in-form sign-in-validation" novalidate>
+          <form method="POST" class="sign-in-form need-validation" novalidate>
             <h2 class="title">Sign in</h2>
               {% csrf_token %}
               {{loginform.error}}
@@ -27,23 +26,15 @@
                 <span class="invalid-feedback mt-0">
                   Please&nbspfill&nbspthis&nbspfield
                  </span>
-            
               </div>
-
-
             <div class="input-field">
               <i class="fas fa-lock"></i>
               {{ loginform.password }}
               <span class="invalid-feedback mt-0">
                 Please&nbspenter&nbspa&nbsppassword&nbspwith&nbspminimum&nbspof&nbsp'8'&nbspcharacters
-
                </span>
-            
             </div>
-
             <input type="submit" value="Login" class="buttons solid" />
-
-
             <div class="forgot-pass"><a href="#">Forget password ?</a></div>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
@@ -61,11 +52,8 @@
               </a>
             </div>
           </form>
-
-
-          <form method="POST" class="sign-up-form sign-up-validation" novalidate>
+          <form method="POST" class="sign-up-form need-validation" novalidate>
             <h2 class="title">Sign up</h2>
-
             {{registform.error}}
             {% csrf_token %}
             <div class="input-field">
@@ -74,7 +62,6 @@
               <span class="invalid-feedback mt-0">
                 Please&nbspfill&nbspthis&nbspfield
                </span>
-             
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -82,9 +69,7 @@
               <span class="invalid-feedback mt-0">
                 Please&nbspenter&nbspa&nbspvalid&nbspemail-&nbspid
                </span>
-               
             </div>
-            
             <div class="input-field">
               <i class="fas fa-lock"></i>
              {{ registform.password1 }}
@@ -99,10 +84,7 @@
                 Please&nbspfill&nbspthis&nbspfield
               </div>
             </div>
-
-
             <input type="submit" class="buttons" value="Sign up" />
-            
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -121,7 +103,6 @@
           </form>
         </div>
       </div>
-
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
@@ -142,9 +123,7 @@
         </div>
       </div>
     </div>
-
     <script src="{% static 'app/assets/login.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

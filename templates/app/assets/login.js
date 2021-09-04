@@ -20,7 +20,7 @@ sign_in_btn.addEventListener("click", () => {
 
 'use strict'
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var signin = document.querySelectorAll('.sign-in-validation')
+  var signin = document.querySelectorAll('.need-validation')
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(signin)
@@ -38,19 +38,19 @@ sign_in_btn.addEventListener("click", () => {
 
 
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var signup = document.querySelectorAll('.sign-up-validation')
+  // // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  // var signup = document.querySelectorAll('.sign-up-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(signup)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+  // // Loop over them and prevent submission
+  // Array.prototype.slice.call(signup)
+  //   .forEach(function (form) {
+  //     form.addEventListener('submit', function (event) {
+  //       if (!form.checkValidity()) {
+  //         event.preventDefault()
+  //         event.stopPropagation()
+  //       }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
+  //       form.classList.add('was-validated')
+  //     }, false)
+  //   })
 
